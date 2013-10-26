@@ -1,0 +1,35 @@
+<h1>Listing npos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rate</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @npos.each do |npo| %>
+      <tr>
+        <td><%= npo.name %></td>
+        <td><%= npo.rate %></td>
+        <td><%= npo.address %></td>
+        <td><%= npo.phone %></td>
+        <td><%= npo.email %></td>
+        <td><%= link_to 'Show', npo %></td>
+        <td><%= link_to 'Edit', edit_npo_path(npo) %></td>
+        <td><%= link_to 'Destroy', npo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Npo', new_npo_path %>

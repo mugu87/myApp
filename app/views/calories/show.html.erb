@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @calory.user_id %>
+</p>
+
+<p>
+  <strong>Transaction:</strong>
+  <%= @calory.transaction %>
+</p>
+
+<%= link_to 'Edit', edit_calory_path(@calory) %> |
+<%= link_to 'Back', calories_path %>

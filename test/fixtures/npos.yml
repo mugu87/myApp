@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: npos
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  rate       :float
+#  address    :string(255)
+#  phone      :string(255)
+#  email      :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  rate: 1.5
+  address: MyString
+  phone: MyString
+  email: MyString
+
+two:
+  name: MyString
+  rate: 1.5
+  address: MyString
+  phone: MyString
+  email: MyString
