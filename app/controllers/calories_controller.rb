@@ -70,6 +70,6 @@ class CaloriesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def calory_params
-    params.require(:calory).permit(:user_id, :transaction)
+    params.require(:calory).permit(:user_id, :trans)
   end
 end

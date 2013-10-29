@@ -15,7 +15,7 @@
     <% @calories.each do |calory| %>
       <tr>
         <td><%= calory.user_id %></td>
-        <td><%= calory.transaction %></td>
+        <td><%= calory.trans %></td>
         <td><%= link_to 'Show', calory %></td>
         <td><%= link_to 'Edit', edit_calory_path(calory) %></td>
         <td><%= link_to 'Destroy', calory, method: :delete, data: { confirm: 'Are you sure?' } %></td>

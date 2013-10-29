@@ -22,4 +22,17 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  has_many :calories
+  has_many :donations
+
+  def get_calories_gained_on_date (date)
+    
+  end
+
+  def get_calories_lost_on_date (date)
+    
+  end
+
+  def get_calories_balance_on_date(date)
+  end
 end

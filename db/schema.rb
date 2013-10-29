@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025230035) do
+ActiveRecord::Schema.define(version: 20131029170948) do
 
   create_table "calories", force: true do |t|
     t.integer  "user_id"
-    t.integer  "transaction"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "trans"
   end
 
   create_table "companies", force: true do |t|

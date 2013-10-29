@@ -1,0 +1,17 @@
+>>>Todo
+- User Model: define only three types in user_type field: exerciser, benefit_admin, manager,
+- User Model: define two types of gender: male and female
+- User Model: email format validation
+- Company Model: email format validation
+- NPO Model: email format validation
+- Identity Model: finetune omniauth to take more fields at registration. see https://github.com/intridea/omniauth-identity
+- All Model: validation
+- Make sure only a certain user have a certain views. Eg: only the manager see everyone else
+- Secure after sign in path
+
+>>>In progress
+set up users and calories date retrieval
+
+
+>>>Done
+- All Models:  relationship supports
