@@ -15,6 +15,17 @@
 #  last_sign_in_ip        :string(255)
 #  created_at             :datetime
 #  updated_at             :datetime
+#  height                 :integer
+#  weight                 :integer
+#  user_type              :string(255)
+#  name                   :string(255)
+#  gender                 :string(255)
+#  dob                    :date
+#  company_id             :integer
+#  provider               :string(255)
+#  uid                    :string(255)
+#  oauth_token            :string(255)
+#  oauth_secret           :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html

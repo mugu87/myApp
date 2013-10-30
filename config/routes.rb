@@ -1,5 +1,5 @@
 BeneFitAppv2::Application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {registrations: 'users/registrations', :omniauth_callbacks => "omniauth_callbacks" }
   resources :users
 
   resources :companies
@@ -9,6 +9,9 @@ BeneFitAppv2::Application.routes.draw do
   resources :donations
 
   resources :npos
+
+
+
 
   root 'welcome#index'
 
