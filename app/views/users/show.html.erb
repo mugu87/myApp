@@ -117,5 +117,38 @@
 </p>
 
 
+<p>
+--------------------------my user data from FitBit----------------------------
+</p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Display Name</th>
+      <th>Full Name</th>
+      <th>Nick Name</th>
+      <th>Gender</th>
+      <th>Height</th>
+      <th>Weight</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @fitBitUserInfo["displayName"] %></td>
+        <td><%= @fitBitUserInfo["fullName"] %></td>
+        <td><%= @fitBitUserInfo["nickName"]%></td>
+        <td><%= @fitBitUserInfo["gender"] %></td>
+        <td><%= @fitBitUserInfo["height"] %></td>
+        <td><%= @fitBitUserInfo["weight"] %></td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

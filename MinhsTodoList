@@ -8,11 +8,12 @@
 - All Model: validation
 - Make sure only a certain user have a certain views. Eg: only the manager see everyone else
 - Secure after sign in path
-- Set up sign up to retrieve info from FitBit, such as height, weight, etc.
+- (optional) try to change user's weight, height, etc.... from benefit apps
+- 
 
 >>>In progress
-set up users and calories date retrieval
-
+set up retrival of calories from a given date (Using java script)
 
 >>>Done
 - All Models:  relationship supports
+- Set up user page to retrieve info from FitBit, such as height, weight, etc.

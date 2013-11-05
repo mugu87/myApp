@@ -14,11 +14,13 @@ class UsersController < ApplicationController
     #@client = @user.fitbit_data
     @client = @user.fitbit_data
     #raise @client.data_by_time_range("/activities/log/activityCalories", {:base_date => "2013-11-05", :period => "7d"}).to_json
-    @fitBitUserInfo = @client.user_info   #Note can get height, weight, stride length, name , weight units , height units, etc.... from here
+    @fitBitUserInfo = @client.user_info["user"]   #Note can get height, weight, stride length, name , weight units , height units, etc.... from here
     @recentFitBitActivities = @client.recent_activities #NOTE may need this to make updates?
     @todayActivities = @client.activities_on_date(Date.today)
+    #raise @client.methods.sort.to_s #NOTE use this to check all of the methods of @client
+    #raise @fitBitUserInfo.class.to_s
 
-    raise @todayActivities.to_json
+
   end
 
   # GET /users/new
