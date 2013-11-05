@@ -11,8 +11,14 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    #@client = @user.fitbit_data
     @client = @user.fitbit_data
-    #raise @client.data_by_time_range("/activities/log/activityCalories", {:base_date => "2013-10-29", :period => "7d"}).to_json
+    #raise @client.data_by_time_range("/activities/log/activityCalories", {:base_date => "2013-11-05", :period => "7d"}).to_json
+    @fitBitUserInfo = @client.user_info   #Note can get height, weight, stride length, name , weight units , height units, etc.... from here
+    @recentFitBitActivities = @client.recent_activities #NOTE may need this to make updates?
+    @todayActivities = @client.activities_on_date(Date.today)
+
+    raise @todayActivities.to_json
   end
 
   # GET /users/new
