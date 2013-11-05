@@ -10,12 +10,12 @@ group :development do
 	gem 'sqlite3'
 	gem 'rspec-rails', '2.13.1'
 end
-
-group :production do
-	gem 'pg'
-	gem 'rails_12factor', '0.0.2'
-end
-
+#
+#group :production do
+#	gem 'pg'
+#	gem 'rails_12factor', '0.0.2'
+#end
+#
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

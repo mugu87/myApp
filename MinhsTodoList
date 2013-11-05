@@ -8,6 +8,7 @@
 - All Model: validation
 - Make sure only a certain user have a certain views. Eg: only the manager see everyone else
 - Secure after sign in path
+- Set up sign up to retrieve info from FitBit, such as height, weight, etc.
 
 >>>In progress
 set up users and calories date retrieval
