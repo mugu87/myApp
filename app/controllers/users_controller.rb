@@ -27,12 +27,12 @@ class UsersController < ApplicationController
     @display = @clientActToday.merge @trackerDataForToday
 
     #require 'json'
-    respond_to do |format|
-      #      format.json{render :json => {:clientActToday => JSON.pretty_generate(@clientActToday),
-      #                                   :trackerActToday => JSON.pretty_generate(@trackerDataForToday) }}
-      #format.json{render :json => JSON.pretty_generate(@allActivities) }
-      format.json{render :json => JSON.pretty_generate(@display) }
-    end
+    #respond_to do |format|
+    #  #      format.json{render :json => {:clientActToday => JSON.pretty_generate(@clientActToday),
+    #  #                                   :trackerActToday => JSON.pretty_generate(@trackerDataForToday) }}
+    #  #format.json{render :json => JSON.pretty_generate(@allActivities) }
+    #  format.json{render :json => JSON.pretty_generate(@display) }
+    #end
 
     #raise @recentFitBitActivities.to_s 
     #raise @clientActToday.to_json
@@ -95,7 +95,7 @@ class UsersController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
-    @myCalories = @user.calories
+    @myStats = @user.stats
     @myDonations = @user.donations
   end
 

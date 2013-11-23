@@ -43,25 +43,25 @@
 
 
 <p>
---------------------------my calories info ----------------------------
+--------------------------my stats info ----------------------------
 </p>
 
 
 <table>
   <thead>
     <tr>
-      <th>calory id</th>
-      <th>transaction</th>
+      <th>stat id</th>
+      <th>today's active calories</th>
       <th>date created </th>
     </tr>
   </thead>
 
   <tbody>
-    <% @myCalories.each do |calory| %>
+    <% @myStats.each do |stat| %>
       <tr>
-        <td><%= calory.id %></td>
-        <td><%= calory.trans %></td>
-        <td><%= calory.created_at %></td>
+        <td><%= stat.id %></td>
+        <td><%= stat.today_active_calories %></td>
+        <td><%= stat.created_at %></td>
       </tr>
     <% end %>
   </tbody>
