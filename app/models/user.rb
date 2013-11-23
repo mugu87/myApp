@@ -34,7 +34,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable, 
   :omniauthable, :omniauth_providers => [:fitbit]
-  has_many :calories
+  has_many :user_stats
   has_many :donations
 
   def get_calories_gained_on_date (date)
