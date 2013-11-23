@@ -4,8 +4,6 @@ BeneFitAppv2::Application.routes.draw do
 
   resources :companies
 
-  resources :calories
-
   resources :donations
 
   resources :npos
