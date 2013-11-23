@@ -26,7 +26,6 @@
 #  uid                    :string(255)
 #  oauth_token            :string(255)
 #  oauth_secret           :string(255)
-#  user_id                :integer
 #
 
 class User < ActiveRecord::Base
@@ -47,6 +46,13 @@ class User < ActiveRecord::Base
   end
 
   def get_calories_balance_on_date(date)
+  end
+
+  def update_stats    #TODO test this with new data being updated at the band
+    client = self.fitbit_data
+    myStats = self.stats
+    lastestRecord = myStats.order("created_at").last #NOTE Should this be "created_at" or "update_at"
+
   end
 
   def self.find_for_fitbit_oauth(auth, signed_in_resource=nil)
