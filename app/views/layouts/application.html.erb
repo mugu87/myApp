@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BeneFitAppv2</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <!-- <= stylesheet_link_tag "application", :media => "all" %> -->
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
-  <header class="navbar navbar-fixed-top navbar-inverse">
+  <header class="header navbar navbar-inverse">
     <div class="navbar-inner">
+      <div class=""></div>
       <div class="container">
         <%= link_to "BeneFit", '#', id: "logo" %>
         <nav>
