@@ -9,6 +9,7 @@
 - Make sure only a certain user have a certain views. Eg: only the manager see everyone else
 - Secure after sign in path
 - (optional) try to change user's weight, height, etc.... from benefit apps
+- Stat Model: make update for a particular day only
 - 
 
 >>>In progress
