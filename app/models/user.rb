@@ -26,6 +26,7 @@
 #  uid                    :string(255)
 #  oauth_token            :string(255)
 #  oauth_secret           :string(255)
+#  user_id                :integer
 #
 
 class User < ActiveRecord::Base
