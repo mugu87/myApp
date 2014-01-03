@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131123031015) do
+ActiveRecord::Schema.define(version: 20131123021730) do
 
   create_table "companies", force: true do |t|
     t.string   "name"
@@ -43,14 +43,7 @@ ActiveRecord::Schema.define(version: 20131123031015) do
 
   create_table "stats", force: true do |t|
     t.integer  "today_active_calories"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "user_id"
-  end
-
-  create_table "user_stats", force: true do |t|
-    t.integer  "calory_in"
-    t.integer  "calory_out"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -79,7 +72,6 @@ ActiveRecord::Schema.define(version: 20131123031015) do
     t.string   "uid"
     t.string   "oauth_token"
     t.string   "oauth_secret"
-    t.integer  "user_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
