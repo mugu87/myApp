@@ -3,6 +3,7 @@ BeneFitAppv2::Application.routes.draw do
   get "api/user_info"
   post "api/test"
 
+  resources :causes
 
   resources :stats
 
