@@ -10,4 +10,10 @@
 #
 
 class Stat < ActiveRecord::Base
+
+	# update the stats, such as the calorie amounts
+	def update_stat (user_id, fitbit_data)
+	end
+
+
 end
