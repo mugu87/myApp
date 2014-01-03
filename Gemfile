@@ -19,6 +19,11 @@ end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# Rails API Builder
+gem 'rabl'
+# JSON parser
+gem 'oj'
+
 #bootstrap 2.3.2
 gem "less-rails-bootstrap"
 gem "less-rails"

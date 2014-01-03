@@ -1,4 +1,9 @@
 BeneFitAppv2::Application.routes.draw do
+  get "api/update_calories"
+  get "api/user_info"
+  post "api/test"
+
+
   resources :stats
 
   devise_for :users, :controllers => {registrations: 'users/registrations', :omniauth_callbacks => "omniauth_callbacks" }
@@ -9,8 +14,6 @@ BeneFitAppv2::Application.routes.draw do
   resources :donations
 
   resources :npos
-
-
 
 
   root 'welcome#index'
