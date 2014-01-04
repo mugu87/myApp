@@ -535,7 +535,7 @@ background-color: transparent;  }
 }
 .nivoSlider {
 	position:relative;
-	background:transparent url(../img/ajax-loader.gif) no-repeat 50% 50%;
+	background:transparent url(../assets/ajax-loader.gif) no-repeat 50% 50%;
     margin: 0 auto 0 auto;
 }
 .nivoSlider img { position:absolute; top:0px; left:0; display:none; }
@@ -552,7 +552,7 @@ background-color: transparent;  }
     width: 33px !important;
     height: 33px !important;
     text-indent: -9999px;
-    background: url("../img/slider_nav.png") no-repeat 0 0;
+    background: url("../assets/slider_nav.png") no-repeat 0 0;
     opacity: 0.6;
 }
  a.nivo-nextNav:hover,  .nivo-prevNav:hover  { opacity: 1; }
