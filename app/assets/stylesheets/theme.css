@@ -156,7 +156,7 @@ img { vertical-align:top; ms-interpolation-mode:bicubic; opacity:1.0;}
 /* Image Hover Colour */
 .hover_img:hover, .hover_colour {  
 	position:relative;
-	background:#D35400 url(../img/zoom.png) no-repeat 50% 50%;
+	background:#D35400 url(../assets/zoom.png) no-repeat 50% 50%;
 	-webkit-box-shadow: inset 0 0 0 7px rgba(255,255,255,0.15);
 	-moz-box-shadow: inset 0 0 0 7px rgba(255,255,255,0.15);
     box-shadow: inset 0 0 0 7px rgba(255,255,255,0.15); 
@@ -461,7 +461,7 @@ background-color: transparent;  }
 .tp-bannertimer.tp-bottom	 {
     width: 100%;
     height: 10px;
-    background: url(../img/timer.png);
+    background: url(../assets/timer.png);
     position: absolute;
     z-index: 200;
 }
@@ -474,7 +474,7 @@ background-color: transparent;  }
 	top: 50%;
 	left: 50%;
 	border-radius: 10px;
-	background: url(../img/preload_img.gif) center no-repeat!important;
+	background: url(../assets/preload_img.gif) center no-repeat!important;
 	z-index:10000;
 }
 
@@ -535,7 +535,7 @@ background-color: transparent;  }
 }
 .nivoSlider {
 	position:relative;
-	background:transparent url(../img/ajax-loader.gif) no-repeat 50% 50%;
+	background:transparent url(../assets/preload_img.gif) no-repeat 50% 50%;
     margin: 0 auto 0 auto;
 }
 .nivoSlider img { position:absolute; top:0px; left:0; display:none; }
@@ -552,7 +552,7 @@ background-color: transparent;  }
     width: 33px !important;
     height: 33px !important;
     text-indent: -9999px;
-    background: url("../img/slider_nav.png") no-repeat 0 0;
+    background: url("../assets/slider_nav.png") no-repeat 0 0;
     opacity: 0.6;
 }
  a.nivo-nextNav:hover,  .nivo-prevNav:hover  { opacity: 1; }
@@ -612,7 +612,7 @@ background-color: transparent;  }
 	margin-bottom:25px;
 }
 .tile.tile-hot:before {
-    background: url("../img/ribbon.png") 0 0 no-repeat;
+    background: url("../assets/ribbon.png") 0 0 no-repeat;
     background-size: 82px 82px;
     content: "";
     height: 82px;
@@ -727,7 +727,7 @@ background-color: transparent;  }
 .team_bio{ width:80%; text-align:center; margin:0 auto; }
 hr.team-line {  
 	border: 0;
-	background: url(../img/lines.png) repeat; 
+	background: url(../assets/lines.png) repeat; 
     height:10px;
 	width:160px;
 	margin:25px auto 25px;
@@ -840,12 +840,12 @@ hr.team-line {
 .client_intro{ width:70%; text-align:center; margin:10px auto 35px; line-height:30px;}
 
 /* ADD YOUR CLIENT IMAGES HERE */
-.client1 {background-image:url(../img/clients/client1.png)!important;}
-.client2 {background-image:url(../img/clients/client2.png)!important;}
-.client3 {background-image:url(../img/clients/client3.png)!important;}
-.client4 {background-image:url(../img/clients/client4.png)!important;}
-.client5 {background-image:url(../img/clients/client5.png)!important;}
-.client6 {background-image:url(../img/clients/client6.png)!important;}
+.client1 {background-image:url(../assets/clients/client1.png)!important;}
+.client2 {background-image:url(../assets/clients/client2.png)!important;}
+.client3 {background-image:url(../assets/clients/client3.png)!important;}
+.client4 {background-image:url(../assets/clients/client4.png)!important;}
+.client5 {background-image:url(../assets/clients/client5.png)!important;}
+.client6 {background-image:url(../assets/clients/client6.png)!important;}
 
 /***************************************************
 	IV: TESTIMONIALS
@@ -1180,7 +1180,7 @@ h3.follow {
 .item_description {
     position:relative;
 	color:#767676;
-	padding:10px 15px;
+	padding:10px 35px;
 	margin-top:-1px;
 	background-color:#e9e6e1;
 	font-size:13px;
@@ -1190,8 +1190,11 @@ h3.follow {
 	border-bottom:2px solid #d3cdc4;
 }
 .item_description:hover{ border-bottom:2px solid #bbb; }
-.item_description a { color:#555; text-transform:uppercase; font-size:12px; letter-spacing: 1.5px;}
+.item_description a { position: relative; top:8px; color:#555; text-transform:uppercase; font-size:17px; letter-spacing: 1.5px;}
 .item_description a:hover{ color:#888; }
+.item_description .cause_paragraph {
+padding: 15px 0px 0px 0px;
+}
 
 /* Isotope Filtering */
 .isotope-item { z-index:2; }
@@ -1293,7 +1296,7 @@ ul#itemContainer { list-style: none; padding:0 0; margin:0 0; width:100%; }
 	width:33px;
 	height:33px;
 	margin-top:-17px;
-	background-image:url(../img/main_carousel_nav.png)!important;
+	background-image:url(../assets/main_carousel_nav.png)!important;
 	background-position:0 -33px;
 	background-repeat:no-repeat; 
 	outline:none; 
