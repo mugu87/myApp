@@ -75,12 +75,12 @@ ActiveRecord::Schema.define(version: 20140104190101) do
     t.string   "data_source"
   end
 
-  create_table "user_stats", force: true do |t|
-    t.integer  "calory_in"
-    t.integer  "calory_out"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+#  create_table "user_stats", force: true do |t|
+#    t.integer  "calory_in"
+#    t.integer  "calory_out"
+#    t.datetime "created_at"
+#    t.datetime "updated_at"
+#  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
