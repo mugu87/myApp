@@ -33,47 +33,30 @@
     <div class="container">
       <!--logo-->
       <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-<<<<<<< HEAD
       <i class="fa fa-bars"></i></button>
           <div class="logo">
-             <a href="index.html"><img src="../assets/logo.png" alt=""/><!--class="animated bounceInDown"--></a>  
-
+             <a href="/"><img src="../assets/logo.png" alt=""/><!--class="animated bounceInDown"--></a>  
           </div>
           <!--menu-->
              <nav id="main_menu">
           <div class="nav-collapse collapse">
             <ul class="nav nav-pills">
-              <li class="dropdown"><a href="/about">About</a> 
-              </li>
-              <li class="dropdown"><a href="/causes">Causes</a>
-              </li>
-              <li><a href="contact.html">Contact</a></li>
-              <li class="dropdown"><a href="javascript:{}">Sign-in</a>
-              </li>
-              
-              <li><a href="contact.html">Contact</a></li>
-
-            </ul>
-
-
-          <ul class="nav pull-right">
-            <% if user_signed_in? %>
-              <li><%= link_to "Home", user_path(current_user)  %></li>
+              <li class="dropdown"><a href="/welcome/about">About</a></li>
+              <li class="dropdown"><a href="/causes">Causes</a></li>
+              <li><a href="/welcome/contact">Contact</a></li>
+              <li class="dropdown"><% if user_signed_in? %>
+              <li><%= link_to "Account", user_path(current_user)  %></li>
               <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete'  %></li>
             <% else %>
-              <li><%= link_to "Home", new_user_session_path  %></li>
-            <% end %>
-          </ul>
+              <li><%= link_to "Sign-in", new_user_session_path  %></li>
+            <% end %></li>
+            </ul>
           </div>
         </nav>
       </div>
     </div>
-
   <!--//header-->
-
-
   <%= yield %>
-
   <!-- footer -->
   <div id="footer">
   <h1>get in touch</h1>
@@ -81,11 +64,10 @@
   We're social and we'd love to hear from you! Feel free to send us an email, find us on Google Plus, follow us on Twitter and join us on Facebook.</h3>
   
   <div class="follow_us">
-    <a href="#" class="zocial twitter"></a>
-    <a href="#" class="zocial facebook"></a>
-    <a href="#" class="zocial linkedin"></a>
-    <a href="#" class="zocial googleplus"></a>
-    <a href="#" class="zocial vimeo"></a>
+    <a href="http://twitter.com/wearebenefit" class="zocial twitter"></a>
+    <a href="http://facebook.com/wearebenefit" class="zocial facebook"></a>
+    <a href="http://linkedin.com/in/benefit" class="zocial linkedin"></a>
+    <a href="http://google.com/plus/wearebenefit" class="zocial googleplus"></a>
     </div>
   </div>
   
@@ -95,16 +77,15 @@
       <div class="row">
         <div class="span12">
         <div class="copyright">
-              FLATI
+              BeneFit
               &copy;
-              <script type="text/javascript">
+            <!--     <script type="text/javascript">
               //<![CDATA[
                 var d = new Date()
                 document.write(d.getFullYear())
                 //]]>
-                </script>
-               - All Rights Reserved :
-              Template by <a href="http://spiralpixel.com">Spiral Pixel</a>
+                </script> -->
+               - All Rights Reserved
             </div>
             </div>
           </div>
