@@ -266,7 +266,7 @@ h1.intro {  line-height:40px; font-weight:300;}
 /**** LOGO****/
 .logo a{
  	float:left; 
-	margin:26px 0px 0 0;
+	margin:19px 0px 0 0;
 	webkit-transition:all 0.3s ease-in;  
     -moz-transition:all 0.3s ease-in;  
     -o-transition:all 0.3s ease-in;  
@@ -274,7 +274,7 @@ h1.intro {  line-height:40px; font-weight:300;}
 }
 .logo a:hover{ opacity: .80; }
 
-#main_menu {float:right; margin:22px 0 0 0;}
+#main_menu {float:right; margin:12px 0 0 0;}
 .nav{ padding:0; margin:0; }
 
 .nav-pills > li{
@@ -565,14 +565,14 @@ background-color: transparent;  }
     z-index:8;
     top: inherit;
     /* left:auto; */
-    bottom: 285px;
+    bottom: 365px;
     margin: auto;
     height: 30px;
     line-height: 60px;
     font-size: 60px;
 	width:auto !important;
     max-width: 680px;
-    background-color:rgba(11,11,11,0.6);
+    background-color: #1ABC9C;
     color: #FFF;
     font-family: lato;
     font-weight: 300;
@@ -736,6 +736,11 @@ hr.team-line {
 /*************************************************************
 	II: ABOUT PAGE
  *************************************************************/
+
+.inner_content .progress .bar{
+	line-height: 22px;
+}
+
 /* Progress Bars */
 .progress {
 	background: #E9E6E1;
@@ -1886,5 +1891,3 @@ h1.title { line-height:40px;!important; }
 .rev-title-sub { margin:10px 0 0!important; }
 .mobile{ margin-top:-20px; }
 }
-
-@import url('benefit-styles.css');
