@@ -37,7 +37,7 @@ body {
 /**** PAGE CONTAINERS ****/
 .header { 
 	padding:0 0;
-	background:#323A45;
+	background:#22514b;
 	margin:0 auto; 
 	min-height: 86px;
 	width: 100%;
@@ -574,6 +574,18 @@ background-color: transparent;  }
     max-width:500px;
     background-color:rgba(11,11,11,0.6);
 	color:#FFF;
+}
+
+
+/***************************************************
+	Time & Money Section
+***************************************************/
+
+#time{
+	text-align: center;
+}
+#money{
+	text-align: center;
 }
 
 /***************************************************
@@ -1866,3 +1878,4 @@ h1.title { line-height:40px;!important; }
 .mobile{ margin-top:-20px; }
 }
 
+@import url('benefit-styles.css');

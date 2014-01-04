@@ -11,11 +11,3 @@
  *= require_self
  *= require_tree .
  */
- 
- @import url('styles.css');
- @import url('bootstrap.css');
- @import url('font-awesome.css');
- @import url('theme.css');
- @import url('prettyPhoto.css');
- @import url('zocial.css');
- 
