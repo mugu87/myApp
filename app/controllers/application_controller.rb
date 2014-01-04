@@ -13,6 +13,14 @@ class ApplicationController < ActionController::Base
 
   private
   def get_event
-  	@crescent_event = Event.find(1)
+	  if(Event.any?)
+		  @crescent_event = Event.find(1)
+	  else
+		  @crescent_event = Event.new
+		  @crescent_event.name = "Crescent City Classic"
+		  @crescent_event.fund = 0.0
+		  @crescent_event.date = DateTime.new(2014,4,19,13,0)
+		  @crescent_event.save
+	  end
   end
 end
