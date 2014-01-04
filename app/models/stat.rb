@@ -11,9 +11,23 @@
 
 class Stat < ActiveRecord::Base
 
-	# update the stats, such as the calorie amounts
-	def update_stat (user_id, fitbit_data)
-	end
+    belongs_to :user
+
+    # update the stats with fitbit data. Fitbit data is a hash with the 
+    # following entries:
+    # 1.
+    def update_fitbit_stat (user_id, fitbit_data)
+    end
+
+    # update the stats with mobile app data. Mobile app is a hash with the
+    # following entries:
+    # 1.
+    def update_mobile_stat (user_id, fitbit_data)
+    end
+
+
+
+
 
 
 end

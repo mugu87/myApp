@@ -1,4 +1,6 @@
 BeneFitAppv2::Application.routes.draw do
+  resources :events
+
   get "api/update_calories"
   get "api/user_info"
   post "api/test"
