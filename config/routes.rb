@@ -12,6 +12,7 @@ BeneFitAppv2::Application.routes.draw do
 
   resources :npos
 
+get 'welcome/about'
 
 
 
