@@ -19,6 +19,11 @@ end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# Rails API Builder
+gem 'rabl'
+# JSON parser
+gem 'oj'
+
 #bootstrap 2.3.2
 gem "less-rails-bootstrap"
 gem "less-rails"
@@ -38,6 +43,7 @@ gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
