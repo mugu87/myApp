@@ -24,7 +24,7 @@ a.zocial {
 .zocial:before {
 	content: "";
 	float: left;
-	font: 120%/1.65 zocial;
+	font: 60%/1.65 zocial;
 	font-style: normal;
 	font-weight: normal;
 	margin: 0 0.5em 0 0;
