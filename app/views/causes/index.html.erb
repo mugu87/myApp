@@ -30,20 +30,20 @@
                     <!-- portfolio_block --> 
                     <div class="projects">                                  
  <% @causes.each do |cause| %>   
-                      <div class="span6 element category01" data-category="category01">
+                      <div class="span6 element category<%= cause.user_id %>" data-category="category<%= cause.user_id %>">
                             <div class="hover_img">
                 <a href="img/portfolio/1.jpg" data-rel="prettyPhoto[portfolio1]"> 
                                 <img src="img/portfolio/1.jpg" alt="" /></a>
                             </div> 
                             <div class="item_description">
-                               <a href="<%= link_to 'Show', cause %>"><span><%= cause.name %></span></a>
+                               <%= link_to cause.name, cause %>
                 <br>
                 <%= cause.description %>
                             </div>                                    
                      </div>
   <% end %>
 
-                        <div class="span6 element category01" data-category="category01">
+   <!--                      <div class="span6 element category01" data-category="category01">
                             <div class="hover_img">
                 <a href="img/portfolio/1.jpg" data-rel="prettyPhoto[portfolio1]"> 
                                 <img src="img/portfolio/1.jpg" alt="" /></a>
@@ -115,7 +115,7 @@
                             </div>
                         <div class="clear"></div>
                     </div>   
-                    <!-- //portfolio-->   
+                    -->   
                 </div>
             </div>
         </div>
