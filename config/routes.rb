@@ -1,4 +1,8 @@
 BeneFitAppv2::Application.routes.draw do
+  get "api/update_calories"
+  get "api/user_info"
+  post "api/test"
+
   resources :causes
 
   resources :stats
@@ -11,8 +15,6 @@ BeneFitAppv2::Application.routes.draw do
   resources :donations
 
   resources :npos
-
-
 
 
   root 'welcome#index'
