@@ -5,12 +5,11 @@
 		 <div class="nivo nivo_height">
 	<!-- nivo slider starts -->
  	<div class="slider-wrapper theme-default">
-	<div id="nslider" class="nivoSlider"> 
-		<!-- add your images here -->
-			<img src="../assets/large/crescentcitybanner.jpg" alt="" title="#nivocaption1" />
-			</div></div>
+ 	<img src="../assets/large/crescentcitybanner.jpg" alt="" title="#nivocaption1" />
+			</div>
+	</div>
 			<!-- add your captions here -->
-	<div id="nivocaption1" class="nivo-html-caption">CRESCENT CITY CLASSIC</div>
+	<div id="caption" class="html-caption">CRESCENT CITY CLASSIC</div>
 	</div>
 	<div id="banner">
 	<div class="container intro_wrapper3">
@@ -145,12 +144,12 @@
 <!-- slider -->
 <%= javascript_include_tag "jquery.nivo.slider.pack.js" , "data-turbolinks-track" => true%>
 <script type="text/javascript">
- //<!--[
+//<![CDATA[
 	$(window).load(function() {
 	$('#nslider').nivoSlider({
 	effect: 'fade', directionNav: true, pauseOnHover: true});
 	});
-	//-->
+//]]>
 </script>
 
 <%= javascript_include_tag "jquery.prettyPhoto.js", "data-turbolinks-track" => true %>
