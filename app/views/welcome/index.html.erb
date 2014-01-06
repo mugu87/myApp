@@ -7,10 +7,7 @@
 	<div class="slider-wrapper theme-default">
 		<img src="../assets/large/crescentcitybanner.jpg" alt="" title="#nivocaption1" />
 	</div>
-	<div id="nslider" class="nivoSlider"> 
-		<!-- add your images here -->
-		<img src="../assets/large/crescentcitybanner.jpg" alt="" title="#nivocaption1" />
-</div></div>
+	</div>
 <!-- add your captions here -->
 <div id="nivocaption1" class="nivo-html-caption">CRESCENT CITY CLASSIC</div>
 	</div>
@@ -27,31 +24,15 @@
 							</div>
 						</div>
 					</div>
+					<div id="time" class="span4">
+					<h1> Time </h1>
+					<span id="countdown"></span>
+					</div>
+
 					<div id="money" class="span4">
 						<h1>Money</h1>
 						<h1><%= @crescent_event.fund %> </h1>
 					</div>
-					<h1> Time </h1>
-					<span id="countdown"></span>
-
-					<script language="javascript" type="text/javascript">
-						var target_year = <%= @crescent_event.date.year %>
-						var target_month = <%= @crescent_event.date.month - 1 %> //NOTE month start with jan == 0
-						var target_day = <%= @crescent_event.date.day  %>
-						var target_hour = <%= @crescent_event.date.hour %>
-						var target_min = <%= @crescent_event.date.min%>
-						var target_sec = <%= @crescent_event.date.sec %>
-
-
-						// get tag element
-						var cd = document.getElementById("countdown");
-
-						// update the tag with id "countdown" every 1 second
-						setInterval(function () {
-
-								cd.innerHTML = countdown( new Date(target_year, target_month,target_day, target_hour,target_min, target_sec) ).toString();
-								}, 1000);
-</script>
 
 
 <!--I think most <span>programmers</span> spend the first 5 years of their career mastering 
@@ -163,25 +144,16 @@
 			<div class="pad25 hidden-desktop"></div>
 		</div>
 
-
-
-		<%= javascript_include_tag "jquery.js" , "data-turbolinks-track" => true%>		
-		<%= javascript_include_tag "bootstrap.min.js", "data-turbolinks-track" => true %>
-		<!-- slider -->
-		<%= javascript_include_tag "jquery.nivo.slider.pack.js" , "data-turbolinks-track" => true%>
-		<script type="text/javascript">
-			//<!--[
-		$(window).load(function() {
-				$('#nslider').nivoSlider({
-effect: 'fade', directionNav: true, pauseOnHover: true});
-				});
-//-->
+<script type="text/javascript">
+//<![CDATA[
+	$(window).load(function() {
+	$('#nslider').nivoSlider({
+	effect: 'fade', directionNav: true, pauseOnHover: true});
+	});
+//]]>
 </script>
 
-<%= javascript_include_tag "jquery.prettyPhoto.js", "data-turbolinks-track" => true %>
-<%= javascript_include_tag "scripts.js" , "data-turbolinks-track" => true%>
-<%= javascript_include_tag "jquery.isotope.min.js", "data-turbolinks-track" => true %>
-<!--%= javascript_include_tag "sorting.js", "data-turbolinks-track" => true %-->
+
 <script type="text/javascript">
 	//<![CDATA[
 $(window).load(function(){	
@@ -190,6 +162,25 @@ $(window).load(function(){
 		});
 //]]>
 </script>		
+
+<script language="javascript" type="text/javascript">
+						var target_year = <%= @crescent_event.date.year %>
+						var target_month = <%= @crescent_event.date.month - 1 %> //NOTE month start with jan == 0
+						var target_day = <%= @crescent_event.date.day  %>
+						var target_hour = <%= @crescent_event.date.hour %>
+						var target_min = <%= @crescent_event.date.min%>
+						var target_sec = <%= @crescent_event.date.sec %>
+
+
+						// get tag element
+						var cd = document.getElementById("countdown");
+
+						// update the tag with id "countdown" every 1 second
+						setInterval(function () {
+
+								cd.innerHTML = countdown( new Date(target_year, target_month,target_day, target_hour,target_min, target_sec) ).toString();
+								}, 1000);
+</script>
 <!--
 <script type="text/javascript">
 	//<![CDATA[
