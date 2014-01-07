@@ -60,6 +60,8 @@ gem 'omniauth-fitbit'
 
 gem 'fitgem'
 
+gem "paperclip", "~> 3.0"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

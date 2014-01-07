@@ -2,11 +2,20 @@
 #
 # Table name: stats
 #
-#  id                    :integer          not null, primary key
-#  today_active_calories :integer
-#  created_at            :datetime
-#  updated_at            :datetime
-#  user_id               :integer
+#  id                      :integer          not null, primary key
+#  today_active_calories   :integer
+#  user_id                 :integer
+#  step_count_walking      :integer
+#  step_count_running      :integer
+#  seconds_walking         :integer
+#  seconds_running         :integer
+#  kilometers_walking      :float
+#  kilometers_running      :float
+#  calories_burned_walking :integer
+#  calories_burned_running :integer
+#  data_source             :string(255)
+#  created_at              :datetime
+#  updated_at              :datetime
 #
 
 require 'spec_helper'

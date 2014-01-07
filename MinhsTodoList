@@ -11,6 +11,10 @@
 - (optional) try to change user's weight, height, etc.... from benefit apps
 - Fix application controller so that it doesnt create just the crescent classic event
 
+>>> Security
+- validation for Cause model (see the website for paperclip)
+- XSS attack prevention for Cause model
+
 
 >>>In progress
 set up retrival of calories from a given date (Using java script)
