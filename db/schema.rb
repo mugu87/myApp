@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20140106231103) do
     t.string   "gender"
     t.date     "dob"
     t.integer  "company_id"
+    t.string   "device_type"
     t.string   "provider"
     t.string   "uid"
     t.string   "oauth_token"

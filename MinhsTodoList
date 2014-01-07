@@ -19,7 +19,9 @@
 
 >>>In progress
 - save fitbit data to user stat
+   |-> make module to do fitness computaion
 - add to device_type to user
+- remove the field device_type from stat
 
 >>>Done
 - All Models:  relationship supports
