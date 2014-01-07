@@ -1,26 +1,28 @@
 >>>Todo
+
+- save mobile data to user stat
 - User Model: define only three types in user_type field: exerciser, benefit_admin, manager,
 - User Model: define two types of gender: male and female
-- User Model: email format validation
+- User Model: email format validation (Maybe done in devise?)
 - Company Model: email format validation
 - NPO Model: email format validation
 - Identity Model: finetune omniauth to take more fields at registration. see https://github.com/intridea/omniauth-identity
 - All Model: validation
-- Make sure only a certain user have a certain views. Eg: only the manager see everyone else
-- Secure after sign in path
 - (optional) try to change user's weight, height, etc.... from benefit apps
 - Fix application controller so that it doesnt create just the crescent classic event
 
 >>> Security
 - validation for Cause model (see the website for paperclip)
 - XSS attack prevention for Cause model
-
+- Secure after sign in path
+- Make sure only a certain user have a certain views. Eg: only the manager see everyone else
 
 >>>In progress
-set up retrival of calories from a given date (Using java script)
+- save fitbit data to user stat
+- add to device_type to user
 
 >>>Done
 - All Models:  relationship supports
 - Set up user page to retrieve info from FitBit, such as height, weight, etc.
-
-testsadfa
+- associate users with causes 
+- associate causes with an event

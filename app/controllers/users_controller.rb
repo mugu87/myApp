@@ -17,22 +17,24 @@ class UsersController < ApplicationController
     #raise @client.data_by_time_range("/activities/log/activityCalories", {:base_date => "2013-11-05", :period => "7d"}).to_json
     @fitBitUserInfo = @client.user_info["user"]   #Note can get height, weight, stride length, name , weight units , height units, etc.... from here
     @recentFitBitActivities = @client.recent_activities #NOTE may need this to make updates?
-    @clientActToday = @client.activities_on_date(Date.today)
+    #@clientActToday = @client.activities_on_date(Date.today)
+    @clientActToday = {}
     # @clientAct1DayAgo= @client.activities_on_date(Date.today - 1)
     # @clientAct2DayAgo= @client.activities_on_date(Date.today - 2)
     # @clientAct3DayAgo= @client.activities_on_date(Date.today - 3)
     # @clientAct4DayAgo= @client.activities_on_date(Date.today - 4)
     # @clientAct5DayAgo= @client.activities_on_date(Date.today - 5)
     @trackerDataForToday= @client.data_by_time_range("/activities/tracker/calories", {:base_date => Date.today, :period => "1d"})
+    #@trackerDataForToday={}
     @display = @clientActToday.merge @trackerDataForToday
 
-    #require 'json'
-    #respond_to do |format|
-    #  #      format.json{render :json => {:clientActToday => JSON.pretty_generate(@clientActToday),
-    #  #                                   :trackerActToday => JSON.pretty_generate(@trackerDataForToday) }}
-    #  #format.json{render :json => JSON.pretty_generate(@allActivities) }
-    #  format.json{render :json => JSON.pretty_generate(@display) }
-    #end
+    require 'json'
+    respond_to do |format|
+      #      format.json{render :json => {:clientActToday => JSON.pretty_generate(@clientActToday),
+      #                                   :trackerActToday => JSON.pretty_generate(@trackerDataForToday) }}
+      #format.json{render :json => JSON.pretty_generate(@allActivities) }
+      format.json{render :json => JSON.pretty_generate(@display) }
+    end
 
     #raise @recentFitBitActivities.to_s 
     #raise @clientActToday.to_json

@@ -14,6 +14,7 @@
 #  calories_burned_walking :integer
 #  calories_burned_running :integer
 #  data_source             :string(255)
+#  stat_date               :date
 #  created_at              :datetime
 #  updated_at              :datetime
 #

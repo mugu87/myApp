@@ -18,6 +18,7 @@
 
 class Cause < ActiveRecord::Base
 	belongs_to :event
+	has_many :users
 	has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
 
 	#validates_attachment :photo,

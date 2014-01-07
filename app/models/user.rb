@@ -36,6 +36,7 @@ class User < ActiveRecord::Base
   :omniauthable, :omniauth_providers => [:fitbit]
   has_many :stats
   has_many :donations
+  belongs_to :cause
 
   def get_calories_gained_on_date (date)
 
