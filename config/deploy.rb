@@ -10,7 +10,7 @@ set :branch, "master"
 set :deploy_via, :copy
 set :shallow_clone, 1
 
-set :domain, 'benefitapp.com/ccc10k'
+set :domain, '162.242.155.97'
 role :web, domain                         # Your HTTP server, Apache/etc
 role :app, domain                         # This may be the same as your `Web` server
 role :db,  domain, :primary => true # This is where Rails migrations will run
