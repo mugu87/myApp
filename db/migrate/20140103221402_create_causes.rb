@@ -4,7 +4,8 @@ class CreateCauses < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.integer :user_id
-
+	  t.text :contact
+	  t.string :link
       t.timestamps
     end
   end

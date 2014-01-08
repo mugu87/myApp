@@ -1,19 +1,41 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @cause.name %>
+<strong>Name:</strong>
+<%= @cause.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @cause.description %>
+<strong>Description:</strong>
+<%= @cause.description %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @cause.user_id %>
+<strong>User:</strong>
+<%= @cause.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_cause_path(@cause) %> |
-<%= link_to 'Back', causes_path %>
+<p>
+<strong>Contact:</strong>
+<%= @cause.contact%>
+</p>
+
+
+<p>
+<strong>Link:</strong>
+<%= @cause.link%>
+</p>
+
+
+<p>
+<strong>Photos:</strong>
+<div>thumbsize image</div>
+<%= image_tag @cause.photo.url(:thumb) %>
+
+<div>medium image</div>
+<%= image_tag @cause.photo.url(:medium) %>
+
+
+<div>original image</div>
+<%= image_tag @cause.photo.url %>
+<%= link_to 'Edit', edit_cause_path(@cause) %> <%= link_to 'Back', causes_path %>

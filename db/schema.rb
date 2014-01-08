@@ -11,14 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140104190101) do
+ActiveRecord::Schema.define(version: 20140106231103) do
 
   create_table "causes", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "user_id"
+    t.text     "contact"
+    t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "companies", force: true do |t|
@@ -62,7 +68,6 @@ ActiveRecord::Schema.define(version: 20140104190101) do
   create_table "stats", force: true do |t|
     t.integer  "today_active_calories"
     t.integer  "user_id"
-<<<<<<< Updated upstream
     t.integer  "step_count_walking"
     t.integer  "step_count_running"
     t.integer  "seconds_walking"
@@ -72,8 +77,7 @@ ActiveRecord::Schema.define(version: 20140104190101) do
     t.integer  "calories_burned_walking"
     t.integer  "calories_burned_running"
     t.string   "data_source"
-=======
->>>>>>> Stashed changes
+    t.date     "stat_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
