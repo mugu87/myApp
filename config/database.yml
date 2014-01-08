@@ -15,9 +15,9 @@ development:
 production:
   adapter: mysql2
   encoding: utf8
-  database: benefitapp_com_test
+  database: rails_db
   pool: 5
-  username: root
+  username: rails
   password: Wo74r2HE
   socket: /var/run/mysqld/mysqld.sock
 

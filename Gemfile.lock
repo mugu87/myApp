@@ -32,6 +32,12 @@ GEM
     atomic (1.1.14)
     bcrypt-ruby (3.1.2)
     builder (3.1.4)
+    capistrano (2.14.2)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.3)
@@ -56,6 +62,7 @@ GEM
     fitgem (0.8.0)
       oauth
     hashie (2.0.5)
+    highline (1.6.20)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -84,6 +91,13 @@ GEM
     multi_json (1.8.2)
     multi_xml (0.5.5)
     mysql (2.9.1)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
+    net-ssh-gateway (1.2.0)
+      net-ssh (>= 2.6.5)
     oauth (0.4.7)
     oj (2.5.3)
     omniauth (1.1.4)
@@ -177,6 +191,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
+  capistrano (~> 2.14.2)
   coffee-rails (~> 4.0.0)
   devise
   fitgem
