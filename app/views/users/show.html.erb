@@ -51,8 +51,16 @@
   <thead>
     <tr>
       <th>stat id</th>
-      <th>today's active calories</th>
-      <th>date created </th>
+      <th>step_count_walking</th>
+      <th>step_count_running</th>
+      <th>seconds walking</th>
+      <th>seconds running</th>
+      <th>kilo walking</th>
+      <th>kilo running</th>
+      <th>cal burned walking</th>
+      <th>cal burned running</th>
+		<th>data_source</th>
+      <th>stat date</th>
     </tr>
   </thead>
 
@@ -60,8 +68,16 @@
     <% @myStats.each do |stat| %>
       <tr>
         <td><%= stat.id %></td>
-        <td><%= stat.today_active_calories %></td>
-        <td><%= stat.created_at %></td>
+        <td><%= stat.step_count_walking%></td>
+        <td><%= stat.step_count_running %></td>
+        <td><%= stat.seconds_walking%></td>
+        <td><%= stat.seconds_running%></td>
+        <td><%= stat.kilometers_walking%></td>
+        <td><%= stat.kilometers_running%></td>
+        <td><%= stat.calories_burned_walking%></td>
+        <td><%= stat.calories_burned_running%></td>
+        <td><%= stat.data_source%></td>
+        <td><%= stat.stat_date%></td>
       </tr>
     <% end %>
   </tbody>
@@ -121,7 +137,6 @@
 --------------------------my user data from FitBit----------------------------
 </p>
 
-
 <table>
   <thead>
     <tr>
@@ -145,7 +160,6 @@
       </tr>
   </tbody>
 </table>
-
 
 
 

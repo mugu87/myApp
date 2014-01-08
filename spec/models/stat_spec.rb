@@ -3,7 +3,6 @@
 # Table name: stats
 #
 #  id                      :integer          not null, primary key
-#  today_active_calories   :integer
 #  user_id                 :integer
 #  step_count_walking      :integer
 #  step_count_running      :integer

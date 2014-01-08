@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 20140106231103) do
   end
 
   create_table "stats", force: true do |t|
-    t.integer  "today_active_calories"
     t.integer  "user_id"
     t.integer  "step_count_walking"
     t.integer  "step_count_running"

@@ -30,6 +30,7 @@
 #
 
 class User < ActiveRecord::Base
+	include StatsHelper
 	# Include default devise modules. Others available are:
 	# :confirmable, :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :registerable,
@@ -40,11 +41,9 @@ class User < ActiveRecord::Base
 	belongs_to :cause
 
 	def get_calories_gained_on_date (date)
-
 	end
 
 	def get_calories_lost_on_date (date)
-
 	end
 
 	def get_calories_balance_on_date(date)
@@ -52,66 +51,51 @@ class User < ActiveRecord::Base
 
 	#methods to get data from fitbit and update it
 	#@require: self.device_type = "fitbit"
-	def update_fitbit_stats
-		client = self.fitbit_data
+	def update_fitbit_stats(client)
+		#client = self.fitbit_data
 		myStats = self.stats
+
 		#sort myStats by date
-		myStats = myStats.sort_by{|x| x[:stat_date]}A
+		myStats = myStats.sort_by{|x| x[:stat_date]}
 		if(myStats.length == 0)
 			last_date = Date.today
 		else
 			last_date = myStats.last[:stat_date]
 		end
+
 		update_fb_data_by_date(client,last_date)
 	end
 
 	def update_fb_data_by_date(client,last_date)
 		while(last_date <= Date.today)
-			last_date_fb_data = client.activities_on_date(last_date) 
-			stat_to_build = self.stats.build
-			stat_to_build = stat_date = last_date
+			fb_data = client.activities_on_date(last_date) 
 
-			miles_running = data["summary"]["distances"][3]["distance"]  #This is the veryActive activity
-			miles_walking = data["summary"]["distances"][4]["distance"]  #This is the moderatelyActive activity
+			# Determine if there is a stat record with this last_date already. If there is one, overwrite it, otherwise, create a new record with this last_date
+			if(Stat.where(stat_date: last_date).empty?)
+				stat_to_build = self.stats.build
+				stat_to_build.stat_date = last_date
+			else
+				stat_to_build = Stat.where(stat_date: last_date).last
+			end
 
-			stat_to_build.step_count_walking = get_steps_count_walking (miles_walking)
-			stat_to_build.step_count_running = get_steps_count_running (miles_running)
-			stat_to_build.kilometers_running = get_kilo_running (miles_running)
-			stat_to_build.kilometers_walking = get_kilo_walking (miles_walking)
-			stat_to_build.calories_burned_walking = get_cal_burned_walking (miles_walking)
-			stat_to_build.calories_burned_running = get_cal_burned_running (miles_running)
-			stat_to_build.seconds_walking = get_sec_walking(miles_walking)
-			stat_to_build.seconds_running = get_sec_running (miles_running)
+			miles_running = fb_data["summary"]["distances"][3]["distance"]  #This is the veryActive activity
+			miles_walking = fb_data["summary"]["distances"][4]["distance"]  #This is the moderatelyActive activity
+			fairlyActiveMinutes = fb_data["summary"]["fairlyActiveMinutes"]
+			veryActiveMinutes = fb_data["summary"]["veryActiveMinutes"]
+
+			stat_to_build.step_count_walking = StatsHelper.get_steps_count_walking (miles_walking) 
+			stat_to_build.step_count_running = StatsHelper.get_steps_count_running (miles_running)
+			stat_to_build.kilometers_running = StatsHelper.miles_to_kilo(miles_running)
+			stat_to_build.kilometers_walking = StatsHelper.miles_to_kilo(miles_walking)
+			stat_to_build.calories_burned_walking = StatsHelper.get_cal_burned_walking (miles_walking)
+			stat_to_build.calories_burned_running = StatsHelper.get_cal_burned_running (miles_running)
+			stat_to_build.seconds_walking = StatsHelper.min_to_sec(fairlyActiveMinutes)
+			stat_to_build.seconds_running = StatsHelper.min_to_sec(veryActiveMinutes)
 
 			stat_to_build.save
 
-			last_date = last_date + 1
+			last_date = last_date.next 
 		end
-	end
-
-
-	def get_steps_count_walking (miles_walking)
-	end
-
-	def get_steps_count_running (miles_running)
-	end
-
-	def get_kilo_running (miles_running)
-	end
-
-	def get_kilo_walking (miles_walking)
-	end
-
-	def get_cal_burned_walking (miles_walking)
-	end
-
-	def get_cal_burned_running (miles_running)
-	end
-
-	def get_sec_walking(miles_walking)
-	end
-
-	def get_sec_running (miles_running)
 	end
 
 
