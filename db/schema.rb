@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(version: 20140106231103) do
     t.string   "name"
     t.text     "description"
     t.integer  "user_id"
+    t.text     "contact"
+    t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
@@ -65,14 +67,17 @@ ActiveRecord::Schema.define(version: 20140106231103) do
 
   create_table "stats", force: true do |t|
     t.integer  "today_active_calories"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "user_id"
-  end
-
-  create_table "user_stats", force: true do |t|
-    t.integer  "calory_in"
-    t.integer  "calory_out"
+    t.integer  "step_count_walking"
+    t.integer  "step_count_running"
+    t.integer  "seconds_walking"
+    t.integer  "seconds_running"
+    t.float    "kilometers_walking"
+    t.float    "kilometers_running"
+    t.integer  "calories_burned_walking"
+    t.integer  "calories_burned_running"
+    t.string   "data_source"
+    t.date     "stat_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -101,7 +106,6 @@ ActiveRecord::Schema.define(version: 20140106231103) do
     t.string   "uid"
     t.string   "oauth_token"
     t.string   "oauth_secret"
-    t.integer  "user_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
