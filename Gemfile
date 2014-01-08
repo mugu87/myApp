@@ -10,6 +10,11 @@ group :development do
 	gem 'sqlite3'
 	gem 'rspec-rails', '2.13.1'
 end
+
+group :test do
+	gem 'mysql'
+	gem 'rspec-rails', '2.13.1'
+end
 #
 #group :production do
 #	gem 'pg'
