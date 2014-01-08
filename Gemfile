@@ -11,15 +11,9 @@ group :development do
 	gem 'rspec-rails', '2.13.1'
 end
 
-group :test do
+group :production do
 	gem 'mysql'
-	gem 'rspec-rails', '2.13.1'
 end
-#
-#group :production do
-#	gem 'pg'
-#	gem 'rails_12factor', '0.0.2'
-#end
 #
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -77,4 +71,4 @@ gem "paperclip", "~> 3.0"
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+ gem 'debugger', group: [:development, :test]
