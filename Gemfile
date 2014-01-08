@@ -11,9 +11,8 @@ group :development do
 	gem 'rspec-rails', '2.13.1'
 end
 
-group :test do
+group :production do
 	gem 'mysql'
-	gem 'rspec-rails', '2.13.1'
 end
 #
 #group :production do
