@@ -10,5 +10,8 @@
  *
  *= require_self
  *= require_tree .
- *= bootstrap.css
  */ 
+ @import "bootstrap.css";
+ @import "styles.css";
+ @import "theme.css";
+ @import "zocial.css";
