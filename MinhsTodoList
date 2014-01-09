@@ -16,6 +16,8 @@ self.get_steps_count_running (miles_running)
 self.get_cal_burned_walking (miles_walking)
 self.get_cal_burned_running (miles_running)
 - User Model: email format validation (Maybe done in devise?)
+- Fix the JS error: Carrousel is not a a function
+- Shorten down the decimal places in the stat's kio_running, kilo_walking, etc...
 
 >>> Security
 - validation for Cause model (see the website for paperclip)
