@@ -12,14 +12,8 @@ group :development do
 	gem 'capistrano', "~> 2.14.2"
 end
 
-<<<<<<< HEAD
 group :production do
 	gem 'mysql'
-=======
-
-group :production do
-	gem 'mysql2'
->>>>>>> 37ad37f628df5d5dd5c7086dd55bf83fef9fe478
 end
 #
 # Use SCSS for stylesheets
