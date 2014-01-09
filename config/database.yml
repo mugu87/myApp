@@ -15,10 +15,10 @@ development:
 production:
   adapter: mysql2
   encoding: utf8
-  database: benefitapp_com_test
+  database: "#{application}_production"
   pool: 5
-  username: root
-  password:
+  username: rails
+  password: Wo74r2HE
   socket: /var/run/mysqld/mysqld.sock
 
 

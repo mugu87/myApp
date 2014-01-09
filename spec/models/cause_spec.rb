@@ -6,8 +6,6 @@
 #  name               :string(255)
 #  description        :text
 #  user_id            :integer
-#  contact            :text
-#  link               :string(255)
 #  created_at         :datetime
 #  updated_at         :datetime
 #  photo_file_name    :string(255)

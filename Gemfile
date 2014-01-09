@@ -9,10 +9,17 @@ group :development do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
 	gem 'rspec-rails', '2.13.1'
+	gem 'capistrano', "~> 2.14.2"
 end
 
+<<<<<<< HEAD
 group :production do
 	gem 'mysql'
+=======
+
+group :production do
+	gem 'mysql2'
+>>>>>>> 37ad37f628df5d5dd5c7086dd55bf83fef9fe478
 end
 #
 # Use SCSS for stylesheets
