@@ -15,7 +15,7 @@ development:
 production:
   adapter: mysql2
   encoding: utf8
-  database: rails_db
+  database: "#{application}_production"
   pool: 5
   username: rails
   password: Wo74r2HE
