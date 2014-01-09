@@ -7,5 +7,6 @@ class AddMoreAttributesToUser < ActiveRecord::Migration
     add_column :users, :gender, :string
     add_column :users, :dob, :date
     add_column :users, :company_id, :integer
+	add_column :users, :device_type, :string
   end
 end
