@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(version: 20140106231103) do
   end
 
   create_table "stats", force: true do |t|
-    t.integer  "today_active_calories"
     t.integer  "user_id"
     t.integer  "step_count_walking"
     t.integer  "step_count_running"
@@ -102,6 +101,7 @@ ActiveRecord::Schema.define(version: 20140106231103) do
     t.string   "gender"
     t.date     "dob"
     t.integer  "company_id"
+    t.string   "device_type"
     t.string   "provider"
     t.string   "uid"
     t.string   "oauth_token"
