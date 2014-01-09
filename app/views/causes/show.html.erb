@@ -3,7 +3,7 @@
 	<div id="banner">
 	<div class="container intro_wrapper">
 	<div class="inner_content">
-	<a href="/causes"><h1>Causes</h1></a>
+	<h1><%= link_to 'Causes', causes_path %></h1>
 	<h1 class="title"><%= @cause.name %></h1>
 	</div>
 		</div>
@@ -76,7 +76,7 @@
 				<a class="related_link" href="#">Item Link</a>
 				</div>
 			</div>
-			
+			 <% end %>
 			<div class="slider-item">
 				<div class="slider-image">
 				<div class="hover_colour">

@@ -32,7 +32,7 @@
                       <div class="span6 element category<%= cause.user_id %>" data-category="category<%= cause.user_id %>">
                             <div class="hover_img">
                 <a href="img/portfolio/1.jpg" data-rel="prettyPhoto[portfolio1]"> 
-                                <img src="img/portfolio/1.jpg" alt="" /></a>
+                                <%= image_tag @cause.photo.url(:medium) %></a>
                             </div> 
                             <div class="item_description">
                                <%= link_to cause.name, cause %>
