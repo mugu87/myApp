@@ -10,13 +10,13 @@ set :branch, "master"
 set :deploy_via, :copy
 set :shallow_clone, 1
 
-set :domain, '162.242.155.97'
+set :domain, '162.242.154.235'
 role :web, domain                         # Your HTTP server, Apache/etc
 role :app, domain                         # This may be the same as your `Web` server
 role :db,  domain, :primary => true # This is where Rails migrations will run
 
 set :user, "rails" #this is the ubuntu user we created
-set :password, "" #rails's password
+set :password, "RatPac87" #rails's password
 set :use_sudo, false
 
 set :mysql_user, "rails" #this is the mysql user we created
