@@ -52,36 +52,27 @@ class User < ActiveRecord::Base
 	#methods to get data from fitbit and update it
 	#@require: self.device_type = "fitbit"
 	def update_fitbit_stats(client)
-		#client = self.fitbit_data
 		myStats = self.stats
 
-		#sort myStats by date
-		myStats = myStats.sort_by{|x| x[:stat_date]}
-		if(myStats.length == 0)
-			last_date = Date.today
-		else
-			last_date = myStats.last[:stat_date]
+        lastest_update_stat = myStats.order("stat_date DESC").first
+		if(lastest_update_stat == nil)
+			lastest_update_stat = self.stats.build
+			lastest_update_stat[:stat_date] = Date.today
 		end
-
-		update_fb_data_by_date(client,last_date)
+		
+		update_fb_data_by_date(client,lastest_update_stat)
 	end
 
-	def update_fb_data_by_date(client,last_date)
-		while(last_date <= Date.today)
-			fb_data = client.activities_on_date(last_date) 
-
-			# Determine if there is a stat record with this last_date already. If there is one, overwrite it, otherwise, create a new record with this last_date
-			if(Stat.where(stat_date: last_date).empty?)
-				stat_to_build = self.stats.build
-				stat_to_build.stat_date = last_date
-			else
-				stat_to_build = Stat.where(stat_date: last_date).last
-			end
-
+	#def update_fb_data_by_date(client,last_date)
+	def update_fb_data_by_date(client,lastest_stat)
+		while(lastest_stat[:stat_date] <= Date.today)
+			fb_data = client.activities_on_date(lastest_stat[:stat_date]) 
 			miles_running = fb_data["summary"]["distances"][3]["distance"]  #This is the veryActive activity
 			miles_walking = fb_data["summary"]["distances"][4]["distance"]  #This is the moderatelyActive activity
 			fairlyActiveMinutes = fb_data["summary"]["fairlyActiveMinutes"]
 			veryActiveMinutes = fb_data["summary"]["veryActiveMinutes"]
+
+			stat_to_build = lastest_stat
 
 			stat_to_build.step_count_walking = StatsHelper.get_steps_count_walking (miles_walking) 
 			stat_to_build.step_count_running = StatsHelper.get_steps_count_running (miles_running)
@@ -94,7 +85,9 @@ class User < ActiveRecord::Base
 
 			stat_to_build.save
 
-			last_date = last_date.next 
+			#last_date = last_date.next 
+			lastest_stat = self.stats.build
+			lastest_stat[:stat_date] = stat_to_build[:stat_date] + 1
 		end
 	end
 

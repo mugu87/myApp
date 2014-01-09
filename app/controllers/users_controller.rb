@@ -19,7 +19,8 @@ class UsersController < ApplicationController
 		# if (@user.device_type.eql?"fitbit")
 		#     @user.update_fitbit_stats(@client)
 		# end
-		# In the mean time,
+		#
+		# In the mean time, everyone is a fitbit client
 		@user.update_fitbit_stats(@client)
 	end
 
