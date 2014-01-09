@@ -90,6 +90,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.8.2)
     multi_xml (0.5.5)
+    mysql2 (0.3.14)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -199,6 +200,7 @@ DEPENDENCIES
   jquery-turbolinks
   less-rails
   less-rails-bootstrap
+  mysql2
   oj
   omniauth-fitbit
   paperclip (~> 3.0)
