@@ -12,16 +12,15 @@ group :development do
 	gem 'capistrano', "~> 2.14.2"
 end
 
-#Nguyen, I don't know why my terminal doesn't work with this so Im gonna comment this out just
-#to get some work done.
-#group :production do
-#	gem 'mysql2'
-#end
-#
-#group :production do
-#	gem 'pg'
-#	gem 'rails_12factor', '0.0.2'
-#end
+<<<<<<< HEAD
+group :production do
+	gem 'mysql'
+=======
+
+group :production do
+	gem 'mysql2'
+>>>>>>> 37ad37f628df5d5dd5c7086dd55bf83fef9fe478
+end
 #
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -79,4 +78,4 @@ gem "paperclip", "~> 3.0"
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+ gem 'debugger', group: [:development, :test]

@@ -209,7 +209,7 @@ SCROLL TO TOP
 /* Template File CSS */
 
 /* Font Import */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);*/
 
 ::-webkit-input-placeholder { /* WebKit browsers */
   color:    #333843;
@@ -356,7 +356,7 @@ Page sidebar
   color:#fff !important;
 }
 .page-sidebar > ul > li.active {
-  border-left:4px solid #ff !important;
+  border-left:4px solid #fff !important;
 
 }
 .page-sidebar > ul > li > a.open {

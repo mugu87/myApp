@@ -5,11 +5,12 @@
 <div class="nivo nivo_height">
 	<!-- nivo slider starts -->
 	<div class="slider-wrapper theme-default">
-		<img src="../assets/large/crescentcitybanner.jpg" alt="" title="#nivocaption1" />
+		<%= image_tag "large/crescentcitybanner.jpg", alt:"", title: "#nivocaption1"  %>
+		<!--img src="../assets/large/crescentcitybanner.jpg" alt="" title="#nivocaption1" /-->
 	</div>
 	</div>
 <!-- add your captions here -->
-<div id="nivocaption1" class="nivo-html-caption">CRESCENT CITY CLASSIC</div>
+<div id="caption" class="html-caption">CRESCENT CITY CLASSIC</div>
 	</div>
 	<div id="banner">
 		<div class="container intro_wrapper3">
@@ -18,20 +19,12 @@
 				<!--welcome-->
 				<div class="welcome_index">
 					<div id="time" class="span4">
-						<h1 id="pagetimer"></h1>
-						<div class="progress">
-							<div class="bar"  data-percentage="85">
-							</div>
-						</div>
-					</div>
-					<div id="time" class="span4">
-					<h1> Time </h1>
+						<h1> Time </h1>
 					<span id="countdown"></span>
 					</div>
-
 					<div id="money" class="span4">
 						<h1>Money</h1>
-						<h1><%= @crescent_event.fund %> </h1>
+						<span><%= @crescent_event.fund %> </span>
 					</div>
 
 
@@ -65,8 +58,9 @@
 							<div class="projects">                            
 								<div class="span3 element category01" data-category="category01">
 									<div class="hover_img">
-										<a href="assets/portfolio/1.jpg" data-rel="prettyPhoto[portfolio1]">	
-											<img src="assets/portfolio/1.jpg" alt="" /></a>
+										<a href="assets/portfolio/1.jpg" data-rel="prettyPhoto[portfolio1]">
+											<%= image_tag "portfolio/1.jpg", alt:"" %>	
+											</a>
 									</div>  
 								</div>
 
@@ -75,14 +69,14 @@
 								<div class="span3 element category02" data-category="category02">
 									<div class="hover_img">
 										<a href="assets/portfolio/2.jpg" data-rel="prettyPhoto[portfolio1]">	
-											<img src="assets/portfolio/2.jpg" alt="" /></a>
+											<%= image_tag "portfolio/2.jpg", alt:"" %>	</a>
 									</div>
 								</div> 
 
 								<div class="span3 element category01" data-category="category01">
 									<div class="hover_img">
 										<a href="assets/portfolio/3.jpg" data-rel="prettyPhoto[portfolio1]">	
-											<img src="assets/portfolio/3.jpg" alt="" /></a>
+											<%= image_tag "portfolio/3.jpg", alt:"" %>	</a>
 									</div>
 								</div>
 
@@ -90,48 +84,48 @@
 								<div class="span3 element category01" data-category="category01">
 									<div class="hover_img">
 										<a href="assets/portfolio/4.jpg" data-rel="prettyPhoto[portfolio1]">	
-											<img src="assets/portfolio/4.jpg" alt="" /></a>
+											<%= image_tag "portfolio/4.jpg", alt:"" %>	</a>
 									</div> 
 								</div>
 
 								<div class="span3 element category02" data-category="category02">
 									<div class="hover_img">
 										<a href="assets/portfolio/5.jpg" data-rel="prettyPhoto[portfolio1]">	
-											<img src="assets/portfolio/5.jpg" alt="" /></a>
+											<%= image_tag "portfolio/5.jpg", alt:"" %>	</a>
 									</div>
 								</div>
 
 								<div class="span3 element category03" data-category="category03">
 									<div class="hover_img">
 										<a href="assets/portfolio/6.jpg" data-rel="prettyPhoto[portfolio1]">	
-											<img src="assets/portfolio/6.jpg" alt="" /></a>
+											<%= image_tag "portfolio/6.jpg", alt:"" %>	</a>
 									</div>
 								</div>
 
 								<div class="span3 element category01" data-category="category01">
 									<div class="hover_img">
 										<a href="assets/portfolio/7.jpg" data-rel="prettyPhoto[portfolio1]">	
-											<img src="assets/portfolio/7.jpg" alt="" /></a>
+											<%= image_tag "portfolio/7.jpg", alt:"" %>	</a>
 									</div>
 								</div>
 								<div class="span3 element category03" data-category="category03">
 									<div class="hover_img">
 										<a href="assets/portfolio/8.jpg" data-rel="prettyPhoto[portfolio1]">	
-											<img src="assets/portfolio/8.jpg" alt="" /></a>
+											<%= image_tag "portfolio/8.jpg", alt:"" %>	</a>
 									</div>
 								</div>
 
 								<div class="span3 element category02" data-category="category02">
 									<div class="hover_img">
 										<a href="assets/portfolio/9.jpg" data-rel="prettyPhoto[portfolio1]">	
-											<img src="assets/portfolio/9.jpg" alt="" /></a>
+											<%= image_tag "portfolio/9.jpg", alt:"" %>	</a>
 									</div>
 								</div>
 
 								<div class="span3 element category03" data-category="category03">
 									<div class="hover_img">
 										<a href="assets/portfolio/10.jpg" data-rel="prettyPhoto[portfolio1]">	
-											<img src="assets/portfolio/10.jpg" alt="" /></a>
+											<%= image_tag "portfolio/10.jpg", alt:"" %>	</a>
 									</div>
 								</div>
 							</div>

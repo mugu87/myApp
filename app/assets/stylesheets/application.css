@@ -11,3 +11,9 @@
  *= require_self
  *= require_tree .
  */ 
+ @import "bootstrap.css";
+ @import "styles.css";
+ @import "theme.css";
+ @import "zocial.css";
+ @import "scaffolds.css";
+ @import "prettyPhoto.css";
