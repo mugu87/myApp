@@ -36,14 +36,3 @@ namespace :deploy do
     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
   end
 end
-
-namespace :deploy do
-  namespace :assets do
-    task :precompile, :roles => assets_role, :except => { :no_release => true } do
-      run <<-CMD.compact
-        cd -- #{latest_release.shellescape} &&
-        #{rake} RAILS_ENV=#{rails_env.to_s.shellescape} #{asset_env} assets:precompile
-      CMD
-    end
-  end
-end
