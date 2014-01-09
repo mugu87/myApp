@@ -12,11 +12,10 @@ group :development do
 	gem 'capistrano', "~> 2.14.2"
 end
 
-#Nguyen, I don't know why my terminal doesn't work with this so Im gonna comment this out just
-#to get some work done.
-#group :production do
-#	gem 'mysql2'
-#end
+
+group :production do
+	gem 'mysql2'
+end
 #
 #group :production do
 #	gem 'pg'
