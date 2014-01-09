@@ -1,4 +1,186 @@
-<div class="container wrapper">
+<!--page-->
+	<!--banner-->
+	<div id="banner">
+	<div class="container intro_wrapper">
+	<div class="inner_content">
+	<a href="/causes"><h1>Causes</h1></a>
+	<h1 class="title"><%= @cause.name %></h1>
+	</div>
+		</div>
+			</div>
+			
+			<div class="container wrapper">
+		<div class="inner_content">
+	<div class="pad30"></div>
+                 <div class="row">
+                    <div class="span4">
+                    <h2><span>About</span></h2>
+						<p class="lead"><%= @cause.description %></p>
+						
+						<h4><span>Contact</span></h4>
+						<ul class="fa-ul">
+							<li><i class="fa-li fa fa-laptop colour"></i><a href="<%= @cause.link%>"> Vist Website</a></li>
+						</ul>
+						 <div class="pad15"></div>
+						
+						<p>Suspendisse tempor leo at massa laoreet vel tincidunt leo molestie. Proin tristique accumsan nisl, quis 
+						sollicitudin urna ullamcorper  posuere cubilia curae vel. Class aptent taciti sociosqu ad litora torquent per conubia nostra, 
+						per inceptos himenaeos.</p>          
+						
+						 <div class="pad15"></div>
+						<a href="#" class="btn btn-primary btn-medium btn-rounded">Join this Cause</a> 
+						
+						<div class="pad45 clear-fix"></div>
+						
+						<div class="portfolio-links">
+						<a href="#"><span class="fa-stack fa-lg">
+						<i class="fa fa-angle-left fa-stack-1x fa-inverse"></i>
+						</span></a> 
+						
+						<a href="#"><span class="fa-stack fa-lg">
+						<i class="fa fa-angle-right fa-stack-1x fa-inverse"></i>
+						</span></a> 
+						</div>
+						
+						<div class="pad25"></div>
+						</div>
+						
+						<div class="span8 pad15">
+						<div class="hover_colour">
+						<a href="<%= @cause.link%>"> Vist Website
+						<%= image_tag @cause.photo.url %></a></div>
+						<div class="pad25"></div>
+						</div>
+						<div class="pad25"></div>
+					</div>
+					</div>
+						</div>
+						
+				<!--related projects-->	
+				<div class="strip2">
+				<h1>Other Causes</h1>
+				<h3 class="center about_strip">Ecilisis venenatis risus, suspendisse ac nec et. Nulla sed mauris, congue duis proin nonummy. 
+				Elementum phasellus. Mauris sed nulla sed, egestas feugiat a dictum libero  vivamus purus arcu, commodo cursus egestas et.</h3>
+					
+				<div class="container wrapper">
+				<div class="inner_content">
+				<div class="inner_content col_full">
+			<% @causes.each do |cause| %>  
+			<div id="slider_related">
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s1.jpg" data-rel="prettyPhoto[portfolio1]">
+				<img src="img/small/s1.jpg" alt=""/></a>
+				</div> 
+				<a class="related_link" href="#">Item Link</a>
+				</div>
+			</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s2.jpg" data-rel="prettyPhoto[portfolio1]">
+				<img src="img/small/s2.jpg" alt=""/></a>
+				</div>
+				<a class="related_link" href="#">Item Link</a>
+				</div>
+			</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s3.jpg" data-rel="prettyPhoto[portfolio1]">
+				<img src="img/small/s3.jpg" alt=""/></a>
+				</div>
+				<a class="related_link" href="#">Item Link</a>
+				</div>
+			</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s4.jpg" data-rel="prettyPhoto[portfolio1]">
+				<img src="img/small/s4.jpg" alt=""/></a>
+				</div>
+				<a class="related_link" href="#">Item Link</a>
+				</div>
+			</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s5.jpg" data-rel="prettyPhoto[portfolio1]">
+				<img src="img/small/s5.jpg" alt=""/></a>
+				</div>
+				<a class="related_link" href="#">Item Link</a>
+				</div>
+			</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s1.jpg" data-rel="prettyPhoto[portfolio1]">
+				<img src="img/small/s1.jpg" alt=""/></a>
+				</div>
+				<a class="related_link" href="#">Item Link</a>
+				</div>
+			</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s7.jpg" data-rel="prettyPhoto[portfolio1]">
+				<img src="img/small/s7.jpg" alt=""/></a>
+				</div>
+				<a class="related_link" href="#">Item Link</a>
+				</div>
+			</div>
+			
+			<div class="slider-item">
+				<div class="slider-image">
+				<div class="hover_colour">
+				<a href="img/large/s8.jpg" data-rel="prettyPhoto[portfolio1]">
+				<img src="img/small/s8.jpg" alt=""/></a>
+				</div>
+				<a class="related_link" href="#">Item Link</a>
+				</div>
+			</div>
+			</div>
+				<div id="sl-prev2" class="widget-scroll-prev2"><i class="fa fa-chevron-left white"></i></div>
+				<div id="sl-next2" class="widget-scroll-next2"><i class="fa fa-chevron-right white but_marg"></i></div>
+				</div>
+			<!--//projects-->
+				</div>
+			</div>
+		</div>
+	<!--//page-->
+	
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function($) {
+	var portfolioCarousel = $("#slider_related");
+	portfolioCarousel.carouFredSel({
+	width : "100%", height : "auto",
+	circular : false, responsive : true, infinite : false, auto : false,
+		items : {  width : 230,
+		visible: { min: 1, max:5 }
+			},
+	swipe: { onMouse: true, onTouch: true },
+	prev : { button : "#sl-prev2", key : "left" },
+	next : {  button : "#sl-next2", key : "right" },
+		 onCreate : function () {
+		$(window).on('resize', function(){
+		portfolioCarousel.parent().add(portfolioCarousel).css('height', portfolioCarousel.children().first().outerHeight() + 'px');
+		})
+		.trigger('resize'); }
+		});
+			});
+			//]]>
+		</script>
+
+
+<!--<div class="container wrapper">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -41,4 +223,4 @@
 <%= image_tag @cause.photo.url %>
 <%= link_to 'Edit', edit_cause_path(@cause) %> <%= link_to 'Back', causes_path %>
 </p>
-</div>
+</div> -->
