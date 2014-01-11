@@ -1,7 +1,7 @@
 default_run_options[:pty] = true
 require 'bundler/capistrano'
 set :application, "myApp"
-set :repository,  "/Users/ryanlinstrom/Benefit_Project/#{application}"
+set :repository,  "/home/mitchell/#{application}"
 set :deploy_to, "/var/www/#{application}" #path to your app on the production server 
 
 set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names

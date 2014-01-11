@@ -85,7 +85,7 @@ class User < ActiveRecord::Base
 
 			stat_to_build.save
 
-			#last_date = last_date.next 
+			break if (lastest_stat[:stat_date] + 1) > Date.today
 			lastest_stat = self.stats.build
 			lastest_stat[:stat_date] = stat_to_build[:stat_date] + 1
 		end

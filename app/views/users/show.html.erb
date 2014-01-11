@@ -73,8 +73,8 @@
         <td><%= stat.step_count_running %></td>
         <td><%= stat.seconds_walking%></td>
         <td><%= stat.seconds_running%></td>
-        <td><%= stat.kilometers_walking%></td>
-        <td><%= stat.kilometers_running%></td>
+        <td><%= stat.kilometers_walking.round(2)%></td>
+        <td><%= stat.kilometers_running.round(2)%></td>
         <td><%= stat.calories_burned_walking%></td>
         <td><%= stat.calories_burned_running%></td>
         <td><%= stat.data_source%></td>
