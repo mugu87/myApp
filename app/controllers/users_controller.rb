@@ -14,8 +14,6 @@ class UsersController < ApplicationController
 		@client = @user.fitbit_data
 		@fitBitUserInfo = @client.user_info["user"]   #Note can get height, weight, stride length, name , weight units , height units, etc.... from here
 
-<<<<<<< HEAD
-=======
     require 'json'
     #respond_to do |format|
       #      format.json{render :json => {:clientActToday => JSON.pretty_generate(@clientActToday),
@@ -24,7 +22,6 @@ class UsersController < ApplicationController
      # format.json{render :json => JSON.pretty_generate(@display) }
     #end
 
->>>>>>> ryan
 		#TODO uncomment these once figuring out how to add the field device_type to user reg page
 		# if (@user.device_type.eql?"fitbit")
 		#     @user.update_fitbit_stats(@client)
