@@ -18,6 +18,9 @@ Purchase:  http://themeforest.net/user/josweb
 06: 404 PAGE, PRICING TABLE, SKILLS BAR, ACCORDIAN, TABS, TOOLTIPS
 07. CSS3 ANIMATIONS
 08. MEDIA QUERIES
+----------------------
+09. NOT FROM THEME
+	I. GLOBAL
 */
 
 /*-----------------------------------------------------------------------------------*/
@@ -1897,3 +1900,15 @@ h1.title { line-height:40px !important; }
 .rev-title-sub { margin:10px 0 0!important; }
 .mobile{ margin-top:-20px; }
 }
+
+/*-----------------------------------------------------------------------------------*/
+/*	09: NOT FROM THEME;
+/*-----------------------------------------------------------------------------------*/
+/***************************************************
+	I: GLOBAL;
+***************************************************/
+
+.user-avatar {
+	width: 100px;
+}
+

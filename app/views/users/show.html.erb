@@ -1,110 +1,143 @@
 <div class="container wrapper">
-<p id="notice"><%= notice %></p>
+  <div class="inner_content">
+    <div class="pad30">
+    <p id="notice"><%= notice %></p>
+      <div class="row pad25">
+        <div class="span3">
+          <a href="/"><%= image_tag "team1.jpg",  class: "user-avatar img-circle"%></a>
+            <div class="pad15">
+              <% if(@user.company_id != nil) %>
+              <p>
+                <strong>Company:</strong>
+                <%= @user.company_id %>
+              </p>
+              <% end %>
+              <% if(@user.name != nil) %>
+              <p>
+                <strong>Name:</strong>
+                <%= @user.name %>
+              </p>
+              <% end %>
+              <% if(@user.user_type != nil) %>
+              <p>
+                <strong>User type:</strong>
+                <%= @user.user_type %>
+              </p>
+              <% end %>
+              <% if(@user.height != nil) %>
+              <p>
+                <strong>Height:</strong>
+                <%= @user.height %>
+              </p>
+              <% end %>
+              <% if(@user.weight != nil) %>
+              <p>
+                <strong>Weight:</strong>
+                <%= @user.weight %>
+              </p>
+              <% end %>
+              <% if(@user.gender != nil) %>
+              <p>
+                <strong>Gender:</strong>
+                <%= @user.gender %>
+              </p>
+              <% end %>
+              <% if(@user.dob != nil) %>
+              <p>
+                <strong>Dob:</strong>
+                <%= @user.dob %>
+              </p>
+              <% end %>
+              <% if(@user.email != nil) %>
+              <p>
+                <strong>Email:</strong>
+                <%= @user.email %>
+              </p>
+              <% end %>
+            </div>
 
-<p>
-<strong>Company:</strong>
-<%= @user.company_id %>
-</p>
+        </div>
+        <div class="span9 pad15">
+          <div>
+            <div class="span3">
+              <div class="quote_sections_hue fadeindown animated fadeInDown">
+                <strong>Calories Lost Today: </strong>
+              </div>
+            <div class="pad25"></div>
+            </div>
+            <div class="span3">
+              <div class="quote_sections_light fadeindown animated fadeInDown">
+                <strong>Calories Gained Today: </strong>
+              </div>
+            <div class="pad25"></div>
+            </div>
+            <div class="span3">
+              <div class="quote_sections fadeindown animated fadeInDown">
+                <strong>Calories Balance Today: </strong>
+              </div>
+            <div class="pad25"></div>
+            </div>
+          </div>
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>stat id</th>
+                <!-- <th>step_count_walking</th>
+                <th>step_count_running</th> -->
+                <th>seconds walking</th>
+                <th>seconds running</th>
+                <th>kilo walking</th>
+                <th>kilo running</th>
+                <th>cal burned walking</th>
+                <th>cal burned running</th>
+              <th>data_source</th>
+                <th>stat date</th>
+              </tr>
+            </thead>
 
-<p>
-<strong>Name:</strong>
-<%= @user.name %>
-</p>
+            <tbody>
+              <% @myStats.each do |stat| %>
+                <tr>
+                  <td><%= stat.id %></td>
+                  <!-- <td><%= stat.step_count_walking%></td>
+                  <td><%= stat.step_count_running %></td> -->
+                  <td><%= stat.seconds_walking%></td>
+                  <td><%= stat.seconds_running%></td>
+                  <td><%= stat.kilometers_walking%></td>
+                  <td><%= stat.kilometers_running%></td>
+                  <td><%= stat.calories_burned_walking%></td>
+                  <td><%= stat.calories_burned_running%></td>
+                  <td><%= stat.data_source%></td>
+                  <td><%= stat.stat_date%></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
 
-<p>
-<strong>User type:</strong>
-<%= @user.user_type %>
-</p>
-
-<p>
-<strong>Height:</strong>
-<%= @user.height %>
-</p>
-
-<p>
-<strong>Weight:</strong>
-<%= @user.weight %>
-</p>
-
-<p>
-<strong>Gender:</strong>
-<%= @user.gender %>
-</p>
-
-<p>
-<strong>Dob:</strong>
-<%= @user.dob %>
-</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
-<p>
-<strong>Email:</strong>
-<%= @user.email %>
-</p>
 
 
+<!-- 
 <p>
 --------------------------my stats info ----------------------------
 </p>
 
 
-<table>
-  <thead>
-    <tr>
-      <th>stat id</th>
-      <th>step_count_walking</th>
-      <th>step_count_running</th>
-      <th>seconds walking</th>
-      <th>seconds running</th>
-      <th>kilo walking</th>
-      <th>kilo running</th>
-      <th>cal burned walking</th>
-      <th>cal burned running</th>
-		<th>data_source</th>
-      <th>stat date</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @myStats.each do |stat| %>
-      <tr>
-        <td><%= stat.id %></td>
-        <td><%= stat.step_count_walking%></td>
-        <td><%= stat.step_count_running %></td>
-        <td><%= stat.seconds_walking%></td>
-        <td><%= stat.seconds_running%></td>
-        <td><%= stat.kilometers_walking%></td>
-        <td><%= stat.kilometers_running%></td>
-        <td><%= stat.calories_burned_walking%></td>
-        <td><%= stat.calories_burned_running%></td>
-        <td><%= stat.data_source%></td>
-        <td><%= stat.stat_date%></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-
-<p>
-<strong> my total lost calories today: </strong>
-</p>
-
-<p>
-<strong> my total gained calories today: </strong>
-</p>
-
-<p>
-<strong> my calories balance today: </strong>
-</p>
 
 
 
 <p>
 --------------------------my donations info ----------------------------
 </p>
+ -->
 
-
-<table>
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th>donation id</th>
