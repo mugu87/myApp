@@ -31,8 +31,7 @@
  <% @causes.each do |cause| %>   
                       <div class="span6 element category<%= cause.user_id %>" data-category="category<%= cause.user_id %>">
                             <div class="hover_img">
-                <a href="img/portfolio/1.jpg" data-rel="prettyPhoto[portfolio1]"> 
-                               </a>
+                <%= link_to image_tag(cause.photo.url), cause_path(cause) %>
                             </div> 
                             <div class="item_description">
                                <%= link_to cause.name, cause %>
