@@ -15,5 +15,5 @@
 /log/*.log
 /tmp
 
-Gemfile.lock
+/Gemfile.lock
 /config/deploy.db
