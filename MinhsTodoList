@@ -26,6 +26,9 @@ self.get_cal_burned_running (miles_running)
 - Make sure only a certain user have a certain views. Eg: only the manager see everyone else
 
 >>>In progress
+- create challenge scheme
+  |-> make relationships
+  |-> create challenge_id in cause
 
 
 >>>Done

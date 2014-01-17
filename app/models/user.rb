@@ -27,6 +27,7 @@
 #  uid                    :string(255)
 #  oauth_token            :string(255)
 #  oauth_secret           :string(255)
+#  challenge_joined_id    :integer
 #
 
 class User < ActiveRecord::Base
@@ -38,6 +39,8 @@ class User < ActiveRecord::Base
 		:omniauthable, :omniauth_providers => [:fitbit]
 	has_many :stats
 	has_many :donations
+	has_one :challenge_supporter
+	belongs_to :challenge_joined
 	belongs_to :cause
 
 	def get_calories_gained_on_date (date)

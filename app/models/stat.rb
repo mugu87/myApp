@@ -14,6 +14,7 @@
 #  calories_burned_running :integer
 #  data_source             :string(255)
 #  stat_date               :date
+#  challenge_id            :integer
 #  created_at              :datetime
 #  updated_at              :datetime
 #

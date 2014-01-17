@@ -12,6 +12,7 @@ class CreateStats < ActiveRecord::Migration
 	  t.integer :calories_burned_running
 	  t.string :data_source
 	  t.date :stat_date
+	  t.integer :challenge_id
 
       t.timestamps
     end
