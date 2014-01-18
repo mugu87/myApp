@@ -565,6 +565,7 @@ background-color: transparent;  }
  a.nivo-prevNav { right:33px; }
 
 #caption {
+    font-family: 'Lato', sans-serif;
     display:block;
     position: relative;
     z-index:8;
@@ -580,7 +581,6 @@ background-color: transparent;  }
     max-width: 680px;
     background-color: #1ABC9C;
     color: #FFF;
-    font-family: lato;
     font-weight: 300;
     letter-spacing: 2px;
     /* border-bottom: 2px solid white; */
@@ -1451,7 +1451,8 @@ ul#itemContainer { list-style: none; padding:0 0; margin:0 0; width:100%; }
 .pricing-header-row-1 small { color:#111; }
 .pricing-table ul { margin:0; padding:0; list-style:none; }
 .price {
-	font: 30px/14px 'Lato', sans serif; font-weight:700;
+	font: 30px/14px 'Lato', sans serif; 
+	font-weight:700;
 	margin-top:13px;
 	text-align:center;
 	color: #555;
