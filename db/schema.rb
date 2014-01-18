@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20140117065405) do
     t.float    "cost_per_completion"
     t.datetime "expiration"
     t.integer  "cause_id"
+    t.string   "challenge_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

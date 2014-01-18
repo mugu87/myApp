@@ -4,6 +4,7 @@ class CreateChallenges < ActiveRecord::Migration
       t.float :cost_per_completion
       t.datetime :expiration
 	  t.integer :cause_id
+	  t.string :challenge_type
 
       t.timestamps
     end

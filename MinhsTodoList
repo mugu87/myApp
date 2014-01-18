@@ -18,6 +18,7 @@ self.get_cal_burned_running (miles_running)
 - User Model: email format validation (Maybe done in devise?)
 - Fix the JS error: Carrousel is not a a function
 - add line dependent: destroy to all models relations
+- restrict challenge type in model challenges to either 'individual' or 'group'
 
 >>> Security
 - validation for Cause model (see the website for paperclip)
