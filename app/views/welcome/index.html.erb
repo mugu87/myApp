@@ -2,6 +2,169 @@
 
 <!--slider - add your images here-->
 <!-- /SLIDER -->
+<script type="text/javascript">
+
+function initiatePriorityOptions() {
+            $(".char_count1").hide(); 
+            $(".char_count2").hide();
+
+            $(".priority-group").each(function() {
+
+                var that = this;
+
+                $(".dropdown-toggle_msgtype").dropdown();
+
+                $(this).find(".set-priority").on("click",function() {
+
+                        if( $(that).hasClass("priority-group-main") ) {
+                            $('.char_count1').show();
+                            $('#mainContent').keyup();
+                        } else if( $(that).hasClass("priority-group-modal") ) {
+                            $('.char_count2').show();
+                            $('textarea[name=message]').keyup();
+                        }
+
+                        // exchange main symbol
+                        $(that).find("#priority").attr('class',"glyphicon glyphicon-phone");
+                        $(that).find('#priority-text').text("SMS (Text Message)")
+
+                        // apply input logic for priority
+                        $(that).find("[name=priority]").val(1);
+                        $(that).find("[name=email]").val(0);
+
+                        // set glyphicon glyphicon check for priority button
+                        allToNone();
+                        $(".dropdown-menu .set-priority").find("span.glyphicon").removeClass("glyphicon glyphicon-unchecked");
+                        $(".dropdown-menu .set-priority").find("span.glyphicon").addClass("glyphicon glyphicon-check");
+                });
+
+                $(this).find(".set-email").on("click",function() {
+
+                        if( $(that).hasClass("priority-group-main") ) {
+                            $('.char_count1').hide();
+                            $(".char_count1").popover('hide');
+                            $('#messagePost').removeAttr('disabled');
+                        } else if( $(that).hasClass("priority-group-modal") ) {
+                            $('.char_count2').hide();
+                            $(".char_count2").popover('hide');
+                            $('#submitThread').removeAttr('disabled');
+                        }
+
+                        // exchange main symbol
+                        $(that).find("#priority").attr('class',"glyphicon glyphicon-envelope");
+                        $(that).find('#priority-text').text("Email")
+
+                        // apply input logic for email
+                        $(that).find("[name=email]").val(1);
+                        $(that).find("[name=priority]").val(0);
+
+                        // set glyphicon glyphicon check for email button
+                        allToNone();
+                        $(this).find("span.glyphicon").removeClass("glyphicon glyphicon-unchecked");
+                        $(this).find("span.glyphicon").addClass("glyphicon glyphicon-check");
+                });
+
+                $(this).find(".set-none").on("click",function() {
+
+                        if( $(that).hasClass("priority-group-main") ) {
+                            $('.char_count1').hide();
+                            $('.char_count1').popover('hide');
+                            $('#messagePost').removeAttr('disabled');
+                        } else if( $(that).hasClass("priority-group-modal") ) {
+                            $('.char_count2').hide();
+                            $('.char_count2').popover('hide');
+                            $('#submitThread').removeAttr('disabled');
+                        }
+
+                        // exchange main symbol
+                        $(that).find("#priority").attr('class',"glyphicon glyphicon-minus-sign");
+                        $(that).find('#priority-text').text("Regular Message")
+
+                        // apply input logic for email
+                        $(that).find("[name=email]").val(0);
+                        $(that).find("[name=priority]").val(0);
+
+                        // set glyphicon glyphicon check for email button
+                        allToNone();
+                        $(this).find("span.glyphicon").removeClass("glyphicon glyphicon-unchecked");
+                        $(this).find("span.glyphicon").addClass("glyphicon glyphicon-check");
+                });  
+
+                function allToNone() {
+                    // reset all check marks to empty
+                    $(".priority-group").find("span.glyphicon").not("#priority").removeClass("glyphicon glyphicon-check");
+                    $(".priority-group").find("span.glyphicon").not("#priority").addClass("glyphicon glyphicon-unchecked");
+                }
+
+                function turnPriorityOn() {
+                    $(".priority-group").find("#priority").removeClass("glyphicon glyphicon-star-empty");
+                    $(".priority-group").find("#priority").addClass("glyphicon glyphicon-star");
+                }
+
+                function turnPriorityOff() {
+                    if( $(".priority-group").find("#priority").hasClass("glyphicon glyphicon-star") ) {
+                        $(".priority-group").find("#priority").removeClass("glyphicon glyphicon-star");
+                        $(".priority-group").find("#priority").addClass("glyphicon glyphicon-star-empty");
+
+                    }
+                }
+
+                // SMS message-ing character count
+
+                $('#mainContent').on('keyup',function() {
+                    var char_left, current_char, before_char_limit, after_char_limit;
+
+                    current_char = $(this).val().length;
+                    before_char_limit = 112-sender_count;
+                    after_char_limit = before_char_limit-21;
+
+                    if( current_char<=before_char_limit ) {
+                        char_left = before_char_limit - current_char;
+                        $('.char_count1').removeClass("badge-important").addClass("badge-success").text(char_left);
+                        $('.char_count1').popover('hide');
+                        $('#messagePost').removeAttr('disabled');
+                    } else {
+                        char_left = before_char_limit - current_char;
+                        if( ( $('.char_count1').parent().find('.popover').length == 0 ) && $(".char_count1").css("display") != "none" ) {
+                            $('.char_count1').popover("show");
+                            $('#messagePost').attr('disabled','disabled');
+                        }
+                        $('.char_count1').removeClass("badge-success").addClass("badge-important").text(char_left);
+                    }
+
+                });
+
+                $('textarea[name=message]').on('keyup',function() {
+                    var char_left, current_char, before_char_limit, after_char_limit;
+
+                    current_char = $(this).val().length;
+                    before_char_limit = 112-sender_count;
+                    after_char_limit = before_char_limit-21;
+
+                    if( current_char<=before_char_limit ) {
+                        char_left = before_char_limit - current_char;
+                        $('.char_count2').removeClass("badge-important").addClass("badge-success").text(char_left);
+                        $('.char_count2').popover('hide');
+                        $('#submitThread').removeAttr('disabled');
+
+                    } else {
+                        char_left = before_char_limit - current_char;
+                        if( ( $('.char_count2').parent().find('.popover').length == 0 ) && $(".char_count2").css("display") != "none" ) {
+                            $('.char_count2').popover("show");
+                            $('#submitThread').attr('disabled','disabled');
+                        }
+                        $('.char_count2').removeClass("badge-success").addClass("badge-important").text(char_left);
+                    }
+
+                });
+
+            });
+        }
+
+initiatePriorityOptions();
+
+</script>
+
 <div class="nivo nivo_height">
 	<!-- nivo slider starts -->
 	<div class="slider-wrapper theme-default">
@@ -40,7 +203,8 @@
 		<!--//banner-->
 
 		<div class="container wrapper">
-			<div class="inner_content"><div class="row">
+			<div class="inner_content">
+				<!-- <div class="row"> -->
 					<div class="span12">
 
 
@@ -54,7 +218,63 @@
 							<div class="clear"></div>
 						</div>
 						<!-- portfolio_block -->
-						<div class="row">      
+						<div class="span10 element category01" data-category="category01">
+							<div class="pricing-table tile">
+								<ul>
+									<li class="pricing-header-row-2">
+										<ul class="inline">
+											<li><h3 class="price">$100 for 10,000</h3></li>
+											<li class=" pull-right">
+												<div class="btn-group priority-group priority-group-modal dropdown">
+													<a class="btn btn-default btn-large dropdown-toggle_msgtype btn-grey list-inline" data-toggle="dropdown" data-target="#">
+														<span id="priority"><i class="icon-minus-sign"></i></span>
+														<span id="priority-text">Calories</span>
+														<span class="caret"></span>
+													</a>
+													<ul class="dropdown-menu">
+														<li>
+															<a href="#" class="set-priority">
+																<span>Miles</span>
+															</a>
+														</li>
+														<li>
+															<a href="#" class="set-email">
+																<span><i class="icon icon-unchecked"></i></span>
+																<span>Minutes</span>
+															</a>
+														</li>
+														<li>
+															<a href="#" class="set-none">
+																<span><i class="icon icon-check"></i></span>
+																<span>Calories</span>
+															</a>
+														</li>
+													</ul>
+													<button class="btn btn-primary btn-large">Accept</button>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="pricing-footer">
+										<ul class="inline pull-left">
+											<li><a href="/"><%= image_tag "team1.jpg",  class: "user-avatar-xs img-circle"%></a></li>
+											<li><a href="/"><%= image_tag "team1.jpg",  class: "user-avatar-xs img-circle"%></a></li>
+											<li><a href="/"><%= image_tag "team1.jpg",  class: "user-avatar-xs img-circle"%></a></li>
+											<li><a href="/"><%= image_tag "team1.jpg",  class: "user-avatar-xs img-circle"%></a></li>
+											<li><a href="/"><%= image_tag "team1.jpg",  class: "user-avatar-xs img-circle"%></a></li>
+										</ul>
+									</li>
+								</ul>
+								<!-- <ul class="inline pull-left">
+									<li><a href="/"><%= image_tag "team1.jpg",  class: "user-avatar-xs img-circle"%></a></li>
+									<li><a href="/"><%= image_tag "team1.jpg",  class: "user-avatar-xs img-circle"%></a></li>
+									<li><a href="/"><%= image_tag "team1.jpg",  class: "user-avatar-xs img-circle"%></a></li>
+									<li><a href="/"><%= image_tag "team1.jpg",  class: "user-avatar-xs img-circle"%></a></li>
+									<li><a href="/"><%= image_tag "team1.jpg",  class: "user-avatar-xs img-circle"%></a></li>
+								</ul> -->
+							</div> 
+						</div>
+						<!-- <div class="row">      
 							<div class="projects">                            
 								<div class="span3 element category01" data-category="category01">
 									<div class="hover_img">
@@ -129,11 +349,11 @@
 									</div>
 								</div>
 							</div>
-						</div>   
+						</div>  -->  <!-- ./row -->
 						<div class="clear"></div>
 						<!-- //portfolio_block -->   
 					</div>
-				</div>
+				<!-- </div> --> <!-- /.row -->
 			</div>
 			<div class="pad25 hidden-desktop"></div>
 		</div>

@@ -1911,4 +1911,12 @@ h1.title { line-height:40px !important; }
 .user-avatar {
 	width: 100px;
 }
+.user-avatar-xs {
+	width: 30px;
+	padding: 10px
+}
+
+.account-animate {
+	width: 240px !important;
+}
 
