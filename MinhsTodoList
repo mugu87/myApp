@@ -1,5 +1,4 @@
 >>>Todo
-
 - Add field to User form so it can choose between fitbit or mobile. Also, remove the default @user.device_type = "fitbit". Once this done, fix the show method of user controller so that it chooses appropriately which device to get update from
 - save mobile data to user stat
 - User Model: define only three types in user_type field: exerciser, benefit_admin, manager,
@@ -34,8 +33,6 @@ self.get_cal_burned_running (miles_running)
   |-> create mechanism to keep track of completed challenges and paid
   	|-> add completed_challenges_count to challenges model
 	|-> determine when a challege is completed or not: can add unattribute to table challeged_joined or create a funciton in chall		enge model
-
-
 
 >>>Done
 - All Models:  relationship supports

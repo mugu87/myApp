@@ -3,3 +3,13 @@ Questions to ask:
 2. Fitbit has light,moderate,and highly active. How are these correspond to the mobile
 app in which it has just running and walking?
 
+
+
+
+
+----------Command Notes-----------------
+1. perform rake commands on server: $cap sake:invoke task="db:migrate"
+2. server IP: 162.242.154.235
+3. upload to deploying server: $cap deploy
+
+

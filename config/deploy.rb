@@ -30,9 +30,18 @@ after "deploy:restart", "deploy:cleanup"
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-  end
+	task :start do ; end
+	task :stop do ; end
+	task :restart, :roles => :app, :except => { :no_release => true } do
+		run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+	end
 end
+
+namespace :sake do
+	desc "Run a task on a remote server."
+	# run like: cap staging rake:invoke task=a_certain_task  
+	task :invoke do
+		run("cd #{deploy_to}/current && bundle exec rake #{ENV['task']} RAILS_ENV=#{rails_env}")
+	end
+end
+
