@@ -20,4 +20,6 @@ class Challenge < ActiveRecord::Base
 	has_many :challenge_joineds
 	belongs_to :cause
 	belongs_to :user
+
+
 end
