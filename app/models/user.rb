@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
 		:omniauthable, :omniauth_providers => [:fitbit]
 	has_many :stats
 	has_many :donations
-	has_one :challenge_supporter
+	has_many :challenges
 	belongs_to :challenge_joined
 	belongs_to :cause
 

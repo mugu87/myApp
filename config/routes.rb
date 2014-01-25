@@ -16,8 +16,6 @@ BeneFitAppv2::Application.routes.draw do
 
   resources :users do
 	  resources :challenges
-	  get 'challenge_supporters/new'
-
   end
 
   #get 'challenges/new'

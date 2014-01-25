@@ -35,13 +35,6 @@ ActiveRecord::Schema.define(version: 20140117065405) do
     t.datetime "updated_at"
   end
 
-  create_table "challenge_supporters", force: true do |t|
-    t.integer  "challenge_id"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "challenges", force: true do |t|
     t.float    "cost_per_completion"
     t.datetime "expiration"
@@ -50,6 +43,7 @@ ActiveRecord::Schema.define(version: 20140117065405) do
     t.float    "kilo_to_walk"
     t.float    "kilo_to_run"
     t.integer  "calories_to_burn"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -10,6 +10,7 @@
 #  kilo_to_walk        :float
 #  kilo_to_run         :float
 #  calories_to_burn    :integer
+#  user_id             :integer
 #  created_at          :datetime
 #  updated_at          :datetime
 #

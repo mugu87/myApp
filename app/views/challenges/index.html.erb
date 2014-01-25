@@ -9,7 +9,36 @@
 
 <h1>All supporting challenges </h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>cost_per_completion</th>
+      <th>expiration</th>
+      <th>kilo_to_walk</th>
+      <th>kilo_to_run</th>
+      <th>calories_to_burn</th>
+      <th>cause name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_supporting_challenges.each do |s| %>
+      <tr>
+        <td><%= s.cost_per_completion%></td>
+        <td><%= s.expiration%></td>
+        <td><%= s.kilo_to_walk%></td>
+        <td><%= s.kilo_to_run %></td>
+        <td><%= s.calories_to_burn%></td>
+        <td><%#=comment out for now bc cause association hasnt been implemented  Cause.find(s.cause_id).name%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+
 <br>
 
-<%= link_to 'Support a challenge', user_challenge_supporters_new_path %>
+<%= link_to 'Support a challenge', new_user_challenge_path %>
 

@@ -8,6 +8,7 @@ class CreateChallenges < ActiveRecord::Migration
 	  t.float :kilo_to_walk
 	  t.float :kilo_to_run
 	  t.integer :calories_to_burn
+	  t.integer :user_id
 
       t.timestamps
     end

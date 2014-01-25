@@ -18,6 +18,7 @@ self.get_cal_burned_running (miles_running)
 - Fix the JS error: Carrousel is not a a function
 - add line dependent: destroy to all models relations
 - restrict challenge type in model challenges to either 'individual' or 'group'
+- enforce git branching strategy
 
 >>> Security
 - validation for Cause model (see the website for paperclip)
@@ -26,11 +27,12 @@ self.get_cal_burned_running (miles_running)
 - Make sure only a certain user have a certain views. Eg: only the manager see everyone else
 
 >>>In progress
-- enforce git branching strategy
 - create challenge scheme
   |-> make relationships    --done
   |-> add the amount of calories/walking/running to achive to challenge model  --done
   |-> create challenge_id in cause  -- done
+  |-> make user support a challenge -- done
+      |-> clean up the old stuff with challenge_supporters controller
   |-> create mechanism to keep track of completed challenges and paid
   	|-> add completed_challenges_count to challenges model
 	|-> determine when a challege is completed or not: can add unattribute to table challeged_joined or create a funciton in chall		enge model
