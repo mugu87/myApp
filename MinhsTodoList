@@ -33,6 +33,7 @@ self.get_cal_burned_running (miles_running)
   |-> create challenge_id in cause  -- done
   |-> make user support a challenge -- done
       |-> clean up the old stuff with challenge_supporters controller
+	  |-> make sure the user cannot join an expired challenge
   |-> create mechanism to keep track of completed challenges and paid
   	|-> add completed_challenges_count to challenges model
 	|-> determine when a challege is completed or not: can add unattribute to table challeged_joined or create a funciton in chall		enge model

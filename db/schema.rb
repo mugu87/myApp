@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140117065405) do
+ActiveRecord::Schema.define(version: 20140125164954) do
 
   create_table "causes", force: true do |t|
     t.string   "name"
@@ -25,14 +25,6 @@ ActiveRecord::Schema.define(version: 20140117065405) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-  end
-
-  create_table "challenge_joineds", force: true do |t|
-    t.float    "kilo_walked"
-    t.float    "kilo_ran"
-    t.integer  "challenge_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "challenges", force: true do |t|
@@ -72,6 +64,15 @@ ActiveRecord::Schema.define(version: 20140117065405) do
     t.text     "description"
     t.float    "fund"
     t.datetime "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "joined_challenges", force: true do |t|
+    t.float    "kilo_walked"
+    t.float    "kilo_ran"
+    t.integer  "challenge_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -128,7 +129,6 @@ ActiveRecord::Schema.define(version: 20140117065405) do
     t.string   "uid"
     t.string   "oauth_token"
     t.string   "oauth_secret"
-    t.integer  "challenge_joined_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
