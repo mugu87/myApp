@@ -1,0 +1,2 @@
+module JoinedChallengesHelper
+end

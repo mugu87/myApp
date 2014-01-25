@@ -15,7 +15,10 @@ BeneFitAppv2::Application.routes.draw do
   devise_for :users, :controllers => {registrations: 'users/registrations', :omniauth_callbacks => "omniauth_callbacks" }
 
   resources :users do
-	  resources :challenges
+	  resources :challenges do
+		  get 'joined_challenges/new'
+		  post 'joined_challenges/create'
+	  end
   end
 
   #get 'challenges/new'

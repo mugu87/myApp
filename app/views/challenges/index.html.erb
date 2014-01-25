@@ -1,9 +1,73 @@
 
 <h1>All joined challenges </h1>
 
+<table>
+  <thead>
+    <tr>
+      <th>cost_per_completion</th>
+      <th>expiration</th>
+      <th>kilo_to_walk</th>
+      <th>kilo_to_run</th>
+      <th>calories_to_burn</th>
+	  <th>cause name</th>
+	  <th>kilo walked </th>
+	  <th>kilo ran </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_joined_challenges.each do |s| %>
+      <tr>
+        <td><%= s.cost_per_completion%></td>
+        <td><%= s.expiration%></td>
+        <td><%= s.kilo_to_walk%></td>
+        <td><%= s.kilo_to_run %></td>
+        <td><%= s.calories_to_burn%></td>
+		<td><%#=comment out for now bc cause association hasnt been implemented  Cause.find(s.cause_id).name%></td>
+		<% challenge_stat = JoinedChallenge.where("challenge_id = ?", s.id) %>
+		<td><%= challenge_stat[0].kilo_walked %></td>
+		<td><%= challenge_stat[0].kilo_ran %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
 <br>
 
 <h1>All unjoined challenges </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>cost_per_completion</th>
+      <th>expiration</th>
+      <th>kilo_to_walk</th>
+      <th>kilo_to_run</th>
+      <th>calories_to_burn</th>
+	  <th>cause name</th>
+	  <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+	  <% @my_unjoined_challenges.each do |s| %>
+      <tr>
+        <td><%= s.cost_per_completion%></td>
+        <td><%= s.expiration%></td>
+        <td><%= s.kilo_to_walk%></td>
+        <td><%= s.kilo_to_run %></td>
+        <td><%= s.calories_to_burn%></td>
+		<td><%#=comment out for now bc cause association hasnt been implemented  Cause.find(s.cause_id).name%></td>
+		<%= link_to 'join this challenge',user_challenge_joined_challenges_create_path(@user,s), :method => :post %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
 
 <br>
 

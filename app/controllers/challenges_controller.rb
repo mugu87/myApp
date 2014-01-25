@@ -6,16 +6,23 @@ class ChallengesController < ApplicationController
 	# GET /challenges.json
 	def index
 		@my_supporting_challenges = @user.challenges
-		@my_joined_challenges = JoinedChallenge.where("user_id = ?", @user.id)
-		@my_unjoined_challenges = JoinedChallenge.where("user_id != ?", @user.id)
-	end
+	
+		#	@my_joined_challenges = JoinedChallenge.where("user_id = ?", @user.id)
+	#	temp =[] 
+	#	@my_joined_challenges.each do |joined|
+	#		temp.append Challenge.find(joined.challenge_id)
+	#	end
 
-	def join_challenge (chal_id)
-		#TODO make sure the challenge is not expired
-		@to_join = JoinedChallenge.new
-		@to_join.challenge_id = chal_id
-		@to_join.user_id = @user.id
 
+		temp = JoinedChallenge.where("user_id = ?", @user.id)
+		@my_joined_challenges =[] 
+		temp .each do |joined|
+			@my_joined_challenges.append Challenge.find(joined.challenge_id)
+		end
+	
+
+		#@my_unjoined_challenges = JoinedChallenge.where("user_id != ?", @user.id)
+		@my_unjoined_challenges = Challenge.all - @my_joined_challenges
 	end
 
 	# GET /challenges/1

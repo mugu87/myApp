@@ -1,0 +1,17 @@
+<%= form_for(@to_join, url: user_challenges_path(@user)) do |f| %>
+	<% if @to_join.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@to_join.errors.count, "error") %> prohibited this challenge from being created:</h2>
+
+			<ul>
+				<% @to_join.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+<% end %>
