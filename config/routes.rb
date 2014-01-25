@@ -1,4 +1,6 @@
 BeneFitAppv2::Application.routes.draw do
+  resources :challenges
+
   resources :events
 
   get "api/update_calories"

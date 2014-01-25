@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140106231103) do
+ActiveRecord::Schema.define(version: 20140117065405) do
 
   create_table "causes", force: true do |t|
     t.string   "name"
@@ -25,6 +25,30 @@ ActiveRecord::Schema.define(version: 20140106231103) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+  end
+
+  create_table "challenge_joineds", force: true do |t|
+    t.float    "kilo_walked"
+    t.float    "kilo_ran"
+    t.integer  "challenge_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "challenge_supporters", force: true do |t|
+    t.integer  "challenge_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "challenges", force: true do |t|
+    t.float    "cost_per_completion"
+    t.datetime "expiration"
+    t.integer  "cause_id"
+    t.string   "challenge_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "companies", force: true do |t|
@@ -77,6 +101,7 @@ ActiveRecord::Schema.define(version: 20140106231103) do
     t.integer  "calories_burned_running"
     t.string   "data_source"
     t.date     "stat_date"
+    t.integer  "challenge_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -106,6 +131,7 @@ ActiveRecord::Schema.define(version: 20140106231103) do
     t.string   "uid"
     t.string   "oauth_token"
     t.string   "oauth_secret"
+    t.integer  "challenge_joined_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -17,7 +17,8 @@ self.get_cal_burned_walking (miles_walking)
 self.get_cal_burned_running (miles_running)
 - User Model: email format validation (Maybe done in devise?)
 - Fix the JS error: Carrousel is not a a function
-- Shorten down the decimal places in the stat's kio_running, kilo_walking, etc...
+- add line dependent: destroy to all models relations
+- restrict challenge type in model challenges to either 'individual' or 'group'
 
 >>> Security
 - validation for Cause model (see the website for paperclip)
@@ -26,6 +27,13 @@ self.get_cal_burned_running (miles_running)
 - Make sure only a certain user have a certain views. Eg: only the manager see everyone else
 
 >>>In progress
+- create challenge scheme
+  |-> make relationships
+  |-> create challenge_id in cause  -- done
+  |-> create mechanism to keep track of completed challenges and paid
+  	|-> add completed_challenges_count to challenges model
+	|-> determine when a challege is completed or not: can add unattribute to table challeged_joined or create a funciton in chall		enge model
+
 
 
 >>>Done
@@ -38,4 +46,5 @@ self.get_cal_burned_running (miles_running)
 - save fitbit data to user stat
    |-> make module to do fitness computaion
 - update user's data from fitbit
+- Shorten down the decimal places in the stat's kio_running, kilo_walking, etc...
 
