@@ -1912,4 +1912,19 @@ h1.title { line-height:40px !important; }
 .user-avatar {
 	width: 100px;
 }
+.user-avatar-xs {
+	width: 30px;
+	padding: 10px
+}
+.user-avatar-sm {
+	width: 45px;
+}
 
+.account-animate {
+	width: 240px !important;
+}
+
+.pad-bottom5 {padding-bottom: 5px;}
+.pad-bottom10 {margin-bottom:  10px;}
+.pad-bottom15 {padding-bottom: 15px;}
+.pad-bottom20 {padding-bottom: 20px;}
