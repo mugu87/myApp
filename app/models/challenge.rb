@@ -6,6 +6,10 @@
 #  cost_per_completion :float
 #  expiration          :datetime
 #  cause_id            :integer
+#  challenge_type      :string(255)
+#  kilo_to_walk        :float
+#  kilo_to_run         :float
+#  calories_to_burn    :integer
 #  created_at          :datetime
 #  updated_at          :datetime
 #

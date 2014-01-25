@@ -47,6 +47,9 @@ ActiveRecord::Schema.define(version: 20140117065405) do
     t.datetime "expiration"
     t.integer  "cause_id"
     t.string   "challenge_type"
+    t.float    "kilo_to_walk"
+    t.float    "kilo_to_run"
+    t.integer  "calories_to_burn"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

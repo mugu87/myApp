@@ -13,7 +13,15 @@ BeneFitAppv2::Application.routes.draw do
   resources :stats
 
   devise_for :users, :controllers => {registrations: 'users/registrations', :omniauth_callbacks => "omniauth_callbacks" }
-  resources :users
+
+  resources :users do
+	  resources :challenges
+	  get 'challenge_supporters/new'
+  end
+
+  #get 'challenges/new'
+	
+  
 
   resources :companies
 

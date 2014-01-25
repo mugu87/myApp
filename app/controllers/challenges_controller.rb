@@ -1,5 +1,5 @@
 class ChallengesController < ApplicationController
-  before_action :set_challenge, only: [:show, :edit, :update, :destroy]
+  before_action :set_challenge, :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /challenges
   # GET /challenges.json
@@ -66,6 +66,11 @@ class ChallengesController < ApplicationController
     def set_challenge
       @challenge = Challenge.find(params[:id])
     end
+
+	def set_user
+		#@user = User.find(parmas[:user_id])
+		raise params
+	end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def challenge_params

@@ -5,6 +5,9 @@ class CreateChallenges < ActiveRecord::Migration
       t.datetime :expiration
 	  t.integer :cause_id
 	  t.string :challenge_type
+	  t.float :kilo_to_walk
+	  t.float :kilo_to_run
+	  t.integer :calories_to_burn
 
       t.timestamps
     end
