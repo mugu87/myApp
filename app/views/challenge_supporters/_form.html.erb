@@ -1,4 +1,4 @@
-<%= form_for(@challenge, url: new_user_challenge_path(@user)) do |f| %>
+<%= form_for(@challenge, url: user_challenges_path(@user)) do |f| %>
 	<% if @challenge.errors.any? %>
 		<div id="error_explanation">
 			<h2><%= pluralize(@challenge.errors.count, "error") %> prohibited this challenge from being created:</h2>

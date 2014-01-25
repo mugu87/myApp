@@ -1,5 +1,5 @@
 class ChallengeSupportersController < ApplicationController
-	before_action :set_supporter, :set_user
+	before_action :set_user
 
 
 
@@ -51,13 +51,12 @@ class ChallengeSupportersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_supporter
-      @supporter = ChallengeSupporter.find(params[:id])
-    end
+   # def set_supporter
+   #   @supporter = ChallengeSupporter.find(params[:id])
+   # end
 
 	def set_user
-	#	@user = User.find(paramsA
-		raise params
+		@user = User.find(params["user_id"])
 	end
 
     # Never trust parameters from the scary internet, only allow the white list through.

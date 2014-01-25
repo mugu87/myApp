@@ -24,11 +24,15 @@ class ChallengesController < ApplicationController
   # POST /challenges
   # POST /challenges.json
   def create
+	#raise challenge_params
     @challenge = Challenge.new(challenge_params)
 
     respond_to do |format|
       if @challenge.save
-        format.html { redirect_to @challenge, notice: 'Challenge was successfully created.' }
+		  #raise params
+        #format.html { redirect_to user_url(User.find(params["user_id"])), notice: 'Challenge was successfully created.' }
+        #format.html { redirect_to user_url(set_user), notice: 'Challenge was successfully created.' }
+        format.html { redirect_to user_challenges_url(set_user), notice: 'Challenge was successfully created.' }
         format.json { render action: 'show', status: :created, location: @challenge }
       else
         format.html { render action: 'new' }
@@ -68,12 +72,12 @@ class ChallengesController < ApplicationController
     end
 
 	def set_user
-		#@user = User.find(parmas[:user_id])
-		raise params
+		#raise params
+		@user = User.find(params["user_id"])
 	end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def challenge_params
-      params.require(:challenge).permit(:cost_per_completion, :expiration)
+      params.require(:challenge).permit(:cost_per_completion, :expiration, :kilo_to_walk, :kilo_to_run,:calories_to_burn)
     end
 end
