@@ -1,5 +1,5 @@
-<!-- <div class="container wrapper">
-<div class="inner_content"> -->
+<div class="container wrapper">
+<div class="inner_content">
 <%= form_for(@cause) do |f| %>
   <% if @cause.errors.any? %>
     <div id="error_explanation">
@@ -18,42 +18,42 @@
     <div class="control-group">
       <label class="control-label"><%= f.label :name %></label>
       <div class="controls">
-        <input type="text" placeholder="Name">
+        <%= f.text_field :name, :autofocus => true, :placeholder => 'Name', :type => 'text', :required => true %>
       </div>
     </div>
     <div class="control-group">
       <label class="control-label"><%= f.label :description %></label>
       <div class="controls">
-        <textarea rows="3" type="text" placeholder="Short description about this cause..."></textarea>
+        <%= f.text_field :description, :placeholder => 'Description', :type => 'text' %>
       </div>
     </div>
     <div class="control-group">
       <label class="control-label"><%= f.label :link%></label>
       <div class="controls">
-        <input type="text" placeholder="Link">
+        <%= f.text_field :link, :placeholder => 'Link', :type => 'text' %>
       </div>
     </div>
     <div class="control-group">
       <label class="control-label"><%= f.label :contact%></label>
       <div class="controls">
-        <input type="text" placeholder="Contact">
+        <%= f.text_field :contact, :placeholder => 'Contact', :type => 'text', :required => true %>
       </div>
     </div>
     <div class="control-group">
       <label class="control-label"><%= f.label :user_id %></label>
       <div class="controls">
-        <input type="text" placeholder="User">
+        <%= f.text_field :user_id, :placeholder => 'User ID' %>
       </div>
     </div>
     <div class="control-group">
-        <label class="control-label">Picture</label>
+        <label class="control-label"><%= f.label :photo %><br></label>
         <div class="controls">
             <!-- <div class="span4"> -->
                 <a href="/"><%= image_tag "team1.jpg"%></a>
                 <div class="uploader-tools">
                     <div class="photo-selector">
                         <div class="image-selector">
-                            <input type="file" name="userfile">
+                            <%= f.file_field :photo, :type => 'file', :required => true %>
                         </div>
                     </div>
                     <p class="help-block">Maximum size of ____. JPG or PNG.</p>
@@ -65,13 +65,13 @@
       <%= f.label :photo %><br>
       <%= f.file_field :photo %>
     </div> -->
-    <hr>
+    
     <div class="actions">
-      <button class="btn btn-primary">Create Cause</button>
+      <%= f.submit "Create Cause", :class => 'btn btn-primary btn-rounded' %>
     </div>
   </form>
 </div>
-
+<% end %>
 
 
 <div class="span7">
@@ -117,33 +117,6 @@
 
 </div>
 
-  <!-- <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+
 </div>
-  <div class="field">
-    <%= f.label :link%><br>
-    <%= f.text_area :link%>
-  </div>
-  <div class="field">
-    <%= f.label :contact%><br>
-    <%= f.text_area :contact%>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
 </div>
-<div>
-    <%= f.label :photo %><br>
-	<%= f.file_field :photo %>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  </div> -->
-<% end %>
-<!-- </div>
-</div> -->
