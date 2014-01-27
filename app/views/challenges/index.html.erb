@@ -25,9 +25,12 @@
         <td><%= s.kilo_to_run %></td>
         <td><%= s.calories_to_burn%></td>
 		<td><%#=comment out for now bc cause association hasnt been implemented  Cause.find(s.cause_id).name%></td>
-		<% challenge_stat = JoinedChallenge.where("challenge_id = ?", s.id) %>
-		<td><%= challenge_stat[0].kilo_walked %></td>
-		<td><%= challenge_stat[0].kilo_ran %></td>
+		<% stat = ((JoinedChallenge.where("challenge_id = ?", s.id))[0]) %>
+		<%# raise stat.methods.sort.to_s %>
+		
+		<% challenge_stat = stat.get_lastest_chal_status %>
+		<td><%= challenge_stat[:kilos_walked_since_joined]  %></td>
+		<td><%= challenge_stat[:kilos_ran_since_joined]  %></td>
 		<td><%= link_to 'unjoin this challenge',user_challenge_joined_challenges_destroy_path(@user,s), :method => :delete %></td>
       </tr>
     <% end %>

@@ -37,6 +37,7 @@ self.get_cal_burned_running (miles_running)
   |-> create mechanism to keep track of completed challenges and paid
   	|-> add completed_challenges_count to challenges model
 	|-> determine when a challege is completed or not: can add unattribute to table challeged_joined or create a funciton in chall		enge model
+	|-> allow users's data to update their joined challenges
 
 >>>Done
 - All Models:  relationship supports

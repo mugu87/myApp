@@ -73,6 +73,8 @@ ActiveRecord::Schema.define(version: 20140125164954) do
     t.float    "kilo_ran"
     t.integer  "challenge_id"
     t.integer  "user_id"
+    t.float    "kilos_had_ran_on_join_date"
+    t.float    "kilos_had_walked_on_join_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
