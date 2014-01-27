@@ -18,6 +18,7 @@ BeneFitAppv2::Application.routes.draw do
 	  resources :challenges do
 		  get 'joined_challenges/new'
 		  post 'joined_challenges/create'
+		  delete 'joined_challenges/destroy'
 	  end
   end
 

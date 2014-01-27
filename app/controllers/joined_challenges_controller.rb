@@ -10,9 +10,9 @@ class JoinedChallengesController < ApplicationController
 
 	# POST /users/:user_id/challenges/:challenge_id
 	def create
-	#	#raise challenge_params
-	#	#@challenge = Challenge.new(challenge_params)
-	#	@challenge = @user.challenges.build(challenge_params)
+		#	#raise challenge_params
+		#	#@challenge = Challenge.new(challenge_params)
+		#	@challenge = @user.challenges.build(challenge_params)
 		@to_join = JoinedChallenge.new
 		@to_join.challenge_id = params["challenge_id"]
 		@to_join.user_id = params["user_id"]
@@ -28,8 +28,21 @@ class JoinedChallengesController < ApplicationController
 				format.json { render json: @to_join.errors, status: :unprocessable_entity }
 			end
 		end
-		
+
 	end
+
+	# DELETE /stats/1
+	# DELETE /users/:user_id/challenges/:challenge_id
+	def destroy
+		@to_delete = JoinedChallenge.where("user_id = ? AND challenge_id = ?", params["user_id"],params["challenge_id"])
+		@to_delete.destroy_all
+
+		respond_to do |format|
+			format.html { redirect_to user_challenges_url(@user)}
+			format.json { head :no_content }
+		end
+	end
+
 
 	private
 	def set_user

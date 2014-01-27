@@ -12,6 +12,7 @@
 	  <th>cause name</th>
 	  <th>kilo walked </th>
 	  <th>kilo ran </th>
+	  <th></th>
     </tr>
   </thead>
 
@@ -27,6 +28,7 @@
 		<% challenge_stat = JoinedChallenge.where("challenge_id = ?", s.id) %>
 		<td><%= challenge_stat[0].kilo_walked %></td>
 		<td><%= challenge_stat[0].kilo_ran %></td>
+		<td><%= link_to 'unjoin this challenge',user_challenge_joined_challenges_destroy_path(@user,s), :method => :delete %></td>
       </tr>
     <% end %>
   </tbody>
@@ -60,7 +62,7 @@
         <td><%= s.kilo_to_run %></td>
         <td><%= s.calories_to_burn%></td>
 		<td><%#=comment out for now bc cause association hasnt been implemented  Cause.find(s.cause_id).name%></td>
-		<%= link_to 'join this challenge',user_challenge_joined_challenges_create_path(@user,s), :method => :post %>
+		<td><%= link_to 'join this challenge',user_challenge_joined_challenges_create_path(@user,s), :method => :post %></td>
       </tr>
     <% end %>
   </tbody>
