@@ -1,18 +1,11 @@
 class ChallengesController < ApplicationController
 	#before_action only: [:show, :edit, :update, :destroy]
-	before_filter :set_user
+	before_filter :set_user 
 
 	# GET /challenges
 	# GET /challenges.json
 	def index
 		@my_supporting_challenges = @user.challenges
-	
-		#	@my_joined_challenges = JoinedChallenge.where("user_id = ?", @user.id)
-	#	temp =[] 
-	#	@my_joined_challenges.each do |joined|
-	#		temp.append Challenge.find(joined.challenge_id)
-	#	end
-
 
 		temp = JoinedChallenge.where("user_id = ?", @user.id)
 		@my_joined_challenges =[] 
@@ -77,9 +70,11 @@ class ChallengesController < ApplicationController
 	# DELETE /challenges/1
 	# DELETE /challenges/1.json
 	def destroy
+		#TODO make sure challenges is not currently joined in order to delete
+		set_challenge
 		@challenge.destroy
 		respond_to do |format|
-			format.html { redirect_to challenges_url }
+			format.html { redirect_to user_challenges_url(@user)}
 			format.json { head :no_content }
 		end
 	end

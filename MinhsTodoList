@@ -28,16 +28,13 @@ self.get_cal_burned_running (miles_running)
 
 >>>In progress
 - create challenge scheme
-  |-> make relationships    --done
-  |-> add the amount of calories/walking/running to achive to challenge model  --done
-  |-> create challenge_id in cause  -- done
-  |-> make user support a challenge -- done
-      |-> clean up the old stuff with challenge_supporters controller
+  |-> make team challenges
+  |-> make user support a challenge 
 	  |-> make sure the user cannot join an expired challenge
+	  |-> make sure there are no one joining a challenge before deleting it
   |-> create mechanism to keep track of completed challenges and paid
   	|-> add completed_challenges_count to challenges model
 	|-> determine when a challege is completed or not: can add unattribute to table challeged_joined or create a funciton in chall		enge model
-	|-> allow users's data to update their joined challenges
 
 >>>Done
 - All Models:  relationship supports
@@ -50,4 +47,13 @@ self.get_cal_burned_running (miles_running)
    |-> make module to do fitness computaion
 - update user's data from fitbit
 - Shorten down the decimal places in the stat's kio_running, kilo_walking, etc...
+- create challenge scheme
+  |-> create challenge_id in cause  -- done
+  |-> make relationships    --done
+  |-> add the amount of calories/walking/running to achive to challenge model  --done
+  |-> make user support a challenge 
+      |-> clean up the old stuff with challenge_supporters controller   --done
+  |-> create mechanism to keep track of completed challenges and paid
+	|-> allow users's data to update their joined challenges   --done
+
 

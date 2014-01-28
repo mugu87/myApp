@@ -12,6 +12,8 @@
 	  <th>cause name</th>
 	  <th>kilo walked </th>
 	  <th>kilo ran </th>
+	  <th>active </th>
+	  <th></th>
 	  <th></th>
     </tr>
   </thead>
@@ -28,10 +30,14 @@
 		<% stat = ((JoinedChallenge.where("challenge_id = ?", s.id))[0]) %>
 		<%# raise stat.methods.sort.to_s %>
 		
-		<% challenge_stat = stat.get_lastest_chal_status %>
+		<% challenge_stat = stat.get_lastest_chal_status(@user.id) %>
 		<td><%= challenge_stat[:kilos_walked_since_joined]  %></td>
 		<td><%= challenge_stat[:kilos_ran_since_joined]  %></td>
+		<td><%= stat.active%> </td>
 		<td><%= link_to 'unjoin this challenge',user_challenge_joined_challenges_destroy_path(@user,s), :method => :delete %></td>
+		<td><%= if !stat.active 
+					link_to 'make this challenge active',user_challenge_joined_challenges_make_active_path(@user,s), :method => :post, :active => true
+				end %></td>
       </tr>
     <% end %>
   </tbody>
@@ -86,7 +92,8 @@
       <th>kilo_to_walk</th>
       <th>kilo_to_run</th>
       <th>calories_to_burn</th>
-      <th>cause name</th>
+	  <th>cause name</th>
+	  <th></th>
     </tr>
   </thead>
 
@@ -98,7 +105,8 @@
         <td><%= s.kilo_to_walk%></td>
         <td><%= s.kilo_to_run %></td>
         <td><%= s.calories_to_burn%></td>
-        <td><%#=comment out for now bc cause association hasnt been implemented  Cause.find(s.cause_id).name%></td>
+		<td><%#=comment out for now bc cause association hasnt been implemented  Cause.find(s.cause_id).name%></td>
+		<td><%= link_to 'unsupport this challenge',user_challenge_path(@user,s),:method => :delete %></td>
       </tr>
     <% end %>
   </tbody>

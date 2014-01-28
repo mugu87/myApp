@@ -7,6 +7,7 @@ class JoinedChallenges < ActiveRecord::Migration
 	  t.integer :user_id
 	  t.float :kilos_had_ran_on_join_date
 	  t.float :kilos_had_walked_on_join_date
+	  t.boolean :active
 
       t.timestamps
     end
