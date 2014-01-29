@@ -198,7 +198,13 @@
 
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+<p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> | 
+<%= link_to 'View My Challenges', user_challenges_path(@user) %>
+</p>
 
 </div>
+
