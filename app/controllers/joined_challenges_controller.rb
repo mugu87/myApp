@@ -1,5 +1,5 @@
 class JoinedChallengesController < ApplicationController
-	before_filter :set_user
+	before_filter :set_user, :set_challenge
 	def new
 		#TODO make sure the challenge is not expired
 		@to_join = JoinedChallenge.new
@@ -17,8 +17,9 @@ class JoinedChallengesController < ApplicationController
 		@to_join = JoinedChallenge.new
 		@to_join.challenge_id = params["challenge_id"]
 		@to_join.user_id = params["user_id"]
-		@to_join.kilo_walked = 0
-		@to_join.kilo_ran = 0
+		@to_join.kilos_walked = 0.0
+		@to_join.kilos_ran = 0.0
+		@to_join.calories_burned = 0
 
 		#The following lines determine whether there is any actively joined challenge going on
 		#If there is none, this newly created challenge will be the one active. Else, it will
@@ -29,6 +30,9 @@ class JoinedChallengesController < ApplicationController
 		else
 			@to_join.active = false
 		end
+
+		#make this joined challenge finished value to be false. Duh!!
+		@to_join.finished = false
 
 		#The following chunk of code basically creates a mark on the user's stats of the day
 		#he/she joins the challenge. That way, we can find how many miles walked/ran
@@ -83,6 +87,10 @@ class JoinedChallengesController < ApplicationController
 	private
 	def set_user
 		@user = User.find(params["user_id"])
+	end
+
+	def set_challenge
+		@challenge = Challenge.find(params["challenge_id"])
 	end
 
 

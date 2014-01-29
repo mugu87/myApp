@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20140125164954) do
     t.datetime "expiration"
     t.integer  "cause_id"
     t.string   "challenge_type"
-    t.float    "kilo_to_walk"
-    t.float    "kilo_to_run"
+    t.float    "kilos_to_walk"
+    t.float    "kilos_to_run"
     t.integer  "calories_to_burn"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -69,13 +69,15 @@ ActiveRecord::Schema.define(version: 20140125164954) do
   end
 
   create_table "joined_challenges", force: true do |t|
-    t.float    "kilo_walked"
-    t.float    "kilo_ran"
+    t.float    "kilos_walked"
+    t.float    "kilos_ran"
+    t.integer  "calories_burned"
     t.integer  "challenge_id"
     t.integer  "user_id"
     t.float    "kilos_had_ran_on_join_date"
     t.float    "kilos_had_walked_on_join_date"
     t.boolean  "active"
+    t.boolean  "finished"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

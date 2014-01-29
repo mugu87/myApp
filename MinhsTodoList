@@ -29,12 +29,17 @@ self.get_cal_burned_running (miles_running)
 >>>In progress
 - create challenge scheme
   |-> make team challenges
+  	|-> add more fields like calories burned, active minutes, etc... to joinedChallenge and challenge
   |-> make user support a challenge 
 	  |-> make sure the user cannot join an expired challenge
 	  |-> make sure there are no one joining a challenge before deleting it
   |-> create mechanism to keep track of completed challenges and paid
   	|-> add completed_challenges_count to challenges model
 	|-> determine when a challege is completed or not: can add unattribute to table challeged_joined or create a funciton in chall		enge model
+	|-> make sure that when user choose an active challenge, all data will only go to that particular challenge
+	|-> in joinedChallenge model, make sure that the updated calories burned is calculated from some function
+
+
 
 >>>Done
 - All Models:  relationship supports

@@ -16,13 +16,13 @@
 			<%= f.number_field :cost_per_completion %> dollars
 		</div>
 		for <div class="field">
-			<%= f.number_field :calories_to_burn %> calories to burn
+			<%= f.number_field :calories_to_burn, default: 0 %> calories to burn
 		</div>
 		or <div class="field">
-			<%= f.number_field :kilo_to_walk %> kilos to walk
+			<%= f.number_field :kilos_to_walk, default: 0.0 %> kilos to walk
 		</div> 
 		or <div class="field">
-			<%= f.number_field :kilo_to_run %> kilos to run
+			<%= f.number_field :kilos_to_run, default: 0.0 %> kilos to run
 		</div> 
 		until <div class="field">
 			<%= f.date_select :expiration %>

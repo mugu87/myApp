@@ -7,12 +7,16 @@ class ChallengesController < ApplicationController
 	def index
 		@my_supporting_challenges = @user.challenges
 
-		temp = JoinedChallenge.where("user_id = ?", @user.id)
+		#update all the joined challenges and retrieve the actual challenge description
+		joineds = JoinedChallenge.where("user_id = ?", @user.id)
 		@my_joined_challenges =[] 
-		temp .each do |joined|
+		#raise joineds.inspect
+		joineds.each do |joined|
+			joined.update_challenge_stat
+			joined.save
 			@my_joined_challenges.append Challenge.find(joined.challenge_id)
 		end
-	
+
 
 		#@my_unjoined_challenges = JoinedChallenge.where("user_id != ?", @user.id)
 		@my_unjoined_challenges = Challenge.all - @my_joined_challenges
@@ -37,6 +41,7 @@ class ChallengesController < ApplicationController
 	def create
 		#raise challenge_params
 		#@challenge = Challenge.new(challenge_params)
+		#raise challenge_params.inspect
 		@challenge = @user.challenges.build(challenge_params)
 
 		respond_to do |format|
@@ -91,6 +96,6 @@ class ChallengesController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def challenge_params
-		params.require(:challenge).permit(:cost_per_completion, :expiration, :kilo_to_walk, :kilo_to_run,:calories_to_burn)
+		params.require(:challenge).permit(:cost_per_completion, :expiration, :kilos_to_walk, :kilos_to_run,:calories_to_burn)
 	end
 end
