@@ -16,3 +16,85 @@
  @import "theme.css";
  @import "zocial.css";
  @import "prettyPhoto.css";
+
+ @charset "UTF-8";
+/*------------------------------------------------------------------
+General
+-------------------------------------------------------------------*/
+.bg-green {
+	background-color: #22514b;
+	width: 100%;
+}
+
+.bg-dark-green {
+	background-color: #132d2a;
+	width: 100%;
+}
+
+.bg-dark-grey {
+	background-color: #323A45;
+}
+
+.orange-border-left {
+	border-left:thick solid #faa732;
+}
+
+.text-white {
+	color: #fff !important;
+}
+
+/*------------------------------------------------------------------
+Home page
+-------------------------------------------------------------------*/
+ #options h1 {
+ 	text-align: center;
+ 	font-size: 40px
+ }
+
+ .projects {
+ 	background-color: #132d2a;
+ }
+
+ .projects img {
+ 	width: 45px;
+ 	vertical-align: middle !important;
+ 	padding-bottom: 5px;
+ 	padding-right:20px;
+ 	/*padding-left: 50px;*/
+ }
+
+.projects li {
+	height: 60px;
+}
+
+.projects button {
+	margin-top: 10px;
+}
+
+/*.projects li.orange-border-left {
+	position: absolute;
+	top:30px;
+	left:22%;
+}*/
+
+.challenge-text {
+	padding-left:30px; 
+	padding-top:25px;
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: 2px;
+}
+.challenge-text span {
+	font-size: 30px;
+	font-weight: 300;
+}
+
+.project-inner {
+	width: 75%;
+	margin: auto;
+}
+.projects .element {
+	margin: 0 !important;
+	padding: 0 !important;
+	height: 110px;
+}

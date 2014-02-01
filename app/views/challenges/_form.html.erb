@@ -1,39 +1,80 @@
-<%= form_for(@challenge, url: user_challenges_path(@user)) do |f| %>
-	<% if @challenge.errors.any? %>
-		<div id="error_explanation">
-			<h2><%= pluralize(@challenge.errors.count, "error") %> prohibited this challenge from being created:</h2>
+<div class="container wrapper">
+	<div class="inner_content">
+		<%= form_for(@challenge, url: user_challenges_path(@user)) do |f| %>
+			<% if @challenge.errors.any? %>
+				<div id="error_explanation">
+					<h2><%= pluralize(@challenge.errors.count, "error") %> prohibited this challenge from being created:</h2>
 
-			<ul>
-				<% @challenge.errors.full_messages.each do |msg| %>
-					<li><%= msg %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
-
-	<div>I will donate 
-		<div class="field">
-			<%= f.number_field :cost_per_completion %> dollars
-		</div>
-		for <div class="field">
-			<%= f.number_field :calories_to_burn %> calories to burn
-		</div>
-		or <div class="field">
-			<%= f.number_field :kilo_to_walk %> kilos to walk
-		</div> 
-		or <div class="field">
-			<%= f.number_field :kilo_to_run %> kilos to run
-		</div> 
-		until <div class="field">
-			<%= f.date_select :expiration %>
-		</div>
-		for this cause <div class="field">
-			<%= select_tag(:cause, options_from_collection_for_select(Cause.all, "id","name")) %>
-		</div>
-
+					<ul>
+						<% @challenge.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+						<% end %>
+					</ul>
+				</div>
+			<% end %>
+			<div class="row">
+				<div class="span5">
+					<form class="form-horizontal">
+						<legend>New Challenge</legend>
+						<div class="control-group">
+							<label class="control-label">I will donate</label>
+							<div class="controls">
+								<div class="input-prepend">
+								  <span class="add-on">$</span>
+								<%= f.number_field :cost_per_completion, :placeholder => 'ex. 100.00', :type => 'number', :required => true %> 
+								</div>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">for</label>
+							<div class="controls">
+								<div class="input-append">
+								<%= f.number_field :calories_to_burn %>
+								  <span class="add-on">calories to burn</span>
+								</div>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">or</label>
+							<div class="controls">
+								<div class="input-append">
+								<%= f.number_field :kilo_to_walk %>
+								  <span class="add-on">kilos to walk</span>
+								</div>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">or</label>
+							<div class="controls">
+								<div class="input-append">
+								<%= f.number_field :kilo_to_run %>
+								  <span class="add-on">kilos to run</span>
+								</div>
+							</div>
+						</div> 
+						<div class="control-group">
+							<label class="control-label">until</label>
+							<div class="controls">
+								<%= f.date_select :expiration, :required => true %>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">for this cause</label>
+							<div class="controls">
+								<%= select_tag(:cause, options_from_collection_for_select(Cause.all, "id","name")) %>
+							</div>
+						</div>
+						<div class="actions">
+							<%= f.submit "Create Challenge", :class => 'btn btn-primary btn-rounded btn-custom' %>
+						</div>
+					</form>
+				</div>
+			</div>
+		<% end %> 
 	</div>
+</div>
 
-	<div class="actions">
-		<%= f.submit %>
-	</div>
-<% end %>
+
+
+
+	

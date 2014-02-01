@@ -173,13 +173,11 @@ initiatePriorityOptions();
 	</div>
 	</div>
 <!-- add your captions here -->
-<div id="caption" class="html-caption">CRESCENT CITY CLASSIC</div>
-	</div>
-	<div id="banner">
+<div id="caption" class="html-caption"><p>Better You. Better World.</p></div>
+
+	<!-- <div id="banner">
 		<div class="container intro_wrapper3">
 			<div class="inner_content">
-
-				<!--welcome-->
 				<div class="welcome_index">
 					<div id="time" class="span4">
 						<h1> Time </h1>
@@ -189,35 +187,111 @@ initiatePriorityOptions();
 						<h1>Money</h1>
 						<span><%= @crescent_event.fund %> </span>
 					</div>
-
-
-<!--I think most <span>programmers</span> spend the first 5 years of their career mastering 
-<span class="hue">complexity</span>	and the rest of their lives learning <span>simplicity</span>
-- Buzz Andersen -->
-
-					</div>
-					<!--//welcome-->
 				</div>
 			</div>
 		</div>
+	</div> -->
 		<!--//banner-->
 
-		<div class="container wrapper">
+		<div class="container">
 			<div class="inner_content">
-				<!-- <div class="row"> -->
-					<div class="span12">
-
-
-						<div id="options">                                           
+					<div>
+						<div id="options">
+						<h1>CHALLENGES</h1>
+						<hr>                                           
 							<ul id="filters2" class="option-set" data-option-key="filter">
 								<li><a href="#filter" data-option-value="*" class=" selected">All</a></li>
-								<li><a href="#filter" data-option-value=".category01">Category 01</a></li>                                            
-								<li><a href="#filter" data-option-value=".category02">Category 02</a></li>
-								<li><a href="#filter" data-option-value=".category03">Category 03</a></li> 
+								<li><a href="#filter" data-option-value=".burn_earn">Burn & Earn</a></li>                                            
+								<li><a href="#filter" data-option-value=".featured">Featured</a></li>
+								<li><a href="#filter" data-option-value=".cause">Cause</a></li> 
 							</ul>                                           
 							<div class="clear"></div>
 						</div>
-						<!-- portfolio_block -->
+					</div>
+				</div>
+			<div class="pad25 hidden-desktop"></div>
+		</div>
+		<div class="projects">
+			<div class="bg-green element burn_earn">
+				<div class="project-inner">
+					<div class="inner_content">
+						<ul class="inline text-white">
+							<li>
+								<div>
+									<%= image_tag "calories.png" %>
+								</div>
+							</li>
+							<li class="orange-border-left">
+								<div class="challenge-text"><span>1,000</span> Calories for <span>$300</span> to Disaster Relief Fund</div>
+							</li>
+							<li class="pull-right">
+								<button class="btn btn-primary btn-large">Accept</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="bg-dark-green element featured">
+				<div class="project-inner">
+					<div class="inner_content">
+						<ul class="inline text-white">
+							<li>
+								<div>
+									<%= image_tag "minutes.png" %>
+								</div>
+							</li>
+							<li class="orange-border-left">
+								<div class="challenge-text"><span>120</span> Active hours for <span>$500</span> to Pet Shelter</div>
+							</li>
+							<li class="pull-right">
+								<button class="btn btn-primary btn-large">Accept</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="bg-green element cause">
+				<div class="project-inner">
+					<div class="inner_content">
+						<ul class="inline text-white">
+							<li>
+								<div>
+									<%= image_tag "miles.png" %>
+								</div>
+							</li>
+							<li class="orange-border-left">
+								<div class="challenge-text"><span>100</span> Miles for <span>$1500</span> to Microfinance Fund</div>
+							</li>
+							<li class="pull-right">
+								<button class="btn btn-primary btn-large">Accept</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="bg-dark-green element cause">
+				<div class="project-inner">
+					<div class="inner_content">
+						<ul class="inline text-white">
+							<li>
+								<div>
+									<%= image_tag "steps.png" %>
+								</div>
+							</li>
+							<li class="orange-border-left">
+								<div class="challenge-text"><span>10,000</span> Steps for <span>$5000</span> to Education Reform</div>
+							</li>
+							<li class="pull-right">
+								<button class="btn btn-primary btn-large">Accept</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+			<div class="bg-dark-grey text-center pad15 pad_bottom15"><a class="text-white" href="#">Click here for more Challenges</a></div>
+
+<!-- portfolio_block -->
 						<!-- <div class="span6 element category01" data-category="category01">
 							<div class="pricing-table tile">
 								<ul class="text-center">
@@ -244,7 +318,7 @@ initiatePriorityOptions();
 								</ul>
 							</div> 
 						</div> -->
-				<div class="row">      
+				<!-- <div class="row">      
 					<div class="projects">  
 						<div class="span3 element category01" data-category="category01">
 							<div class="quote_sections_dark fadeindown animated fadeInDown">
@@ -323,7 +397,7 @@ initiatePriorityOptions();
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 						<!-- <div class="row">      
 							<div class="projects">                            
 								<div class="span3 element category01" data-category="category01">
@@ -400,13 +474,7 @@ initiatePriorityOptions();
 								</div>
 							</div>
 						</div>  -->  <!-- ./row -->
-						<div class="clear"></div>
-						<!-- //portfolio_block -->   
-					</div>
-				<!-- </div> --> <!-- /.row -->
-			</div>
-			<div class="pad25 hidden-desktop"></div>
-		</div>
+						<!-- //portfolio_block -->  
 
 <script type="text/javascript">
 //<![CDATA[
@@ -440,10 +508,10 @@ $(window).load(function(){
 						var cd = document.getElementById("countdown");
 
 						// update the tag with id "countdown" every 1 second
-						setInterval(function () {
+						/*setInterval(function () {
 
 								cd.innerHTML = countdown( new Date(target_year, target_month,target_day, target_hour,target_min, target_sec) ).toString();
-								}, 1000);
+								}, 1000);*/
 </script>
 <!--
 <script type="text/javascript">
