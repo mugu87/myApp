@@ -96,6 +96,6 @@ class ChallengesController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def challenge_params
-		params.require(:challenge).permit(:cost_per_completion, :expiration, :kilos_to_walk, :kilos_to_run,:calories_to_burn)
+		params.require(:challenge).permit(:cost_per_completion, :challenge_type,:expiration, :kilos_to_walk, :kilos_to_run,:calories_to_burn)
 	end
 end

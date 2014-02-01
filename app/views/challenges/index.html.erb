@@ -5,6 +5,7 @@
 	<thead>
 		<tr>
 			<th>cost_per_completion</th>
+			<th>challenge type</th>
 			<th>expiration</th>
 			<th>kilo_to_walk</th>
 			<th>kilo_to_run</th>
@@ -23,6 +24,7 @@
 		<% @my_joined_challenges.each do |s| %>
 			<tr>
 				<td><%= s.cost_per_completion%></td>
+				<td><%= s.challenge_type%></td>
 				<td><%= s.expiration%></td>
 				<td><%= s.kilos_to_walk%></td>
 				<td><%= s.kilos_to_run %></td>
@@ -58,6 +60,7 @@
 		<thead>
 			<tr>
 				<th>cost_per_completion</th>
+				<th>challenge_type</th>
 				<th>expiration</th>
 				<th>kilos_to_walk</th>
 				<th>kilos_to_run</th>
@@ -71,6 +74,7 @@
 			<% @my_unjoined_challenges.each do |s| %>
 				<tr>
 					<td><%= s.cost_per_completion%></td>
+					<td><%= s.challenge_type%></td>
 					<td><%= s.expiration%></td>
 					<td><%= s.kilos_to_walk%></td>
 					<td><%= s.kilos_to_run %></td>
@@ -93,6 +97,7 @@
 		<thead>
 			<tr>
 				<th>cost_per_completion</th>
+				<th>challenge_type</th>
 				<th>expiration</th>
 				<th>kilo_to_walk</th>
 				<th>kilo_to_run</th>
@@ -106,6 +111,7 @@
 			<% @my_supporting_challenges.each do |s| %>
 				<tr>
 					<td><%= s.cost_per_completion%></td>
+					<td><%= s.challenge_type%></td>
 					<td><%= s.expiration%></td>
 					<td><%= s.kilos_to_walk%></td>
 					<td><%= s.kilos_to_run %></td>

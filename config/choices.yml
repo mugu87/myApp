@@ -1,0 +1,11 @@
+# config/choices.yml
+
+sex:
+- Male 
+- Female
+device_type:
+- Fitbit
+- Mobile
+challenge_type:
+- Group
+- Individual

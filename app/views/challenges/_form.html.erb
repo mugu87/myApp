@@ -30,7 +30,10 @@
 		for this cause <div class="field">
 			<%= select_tag(:cause, options_from_collection_for_select(Cause.all, "id","name")) %>
 		</div>
-
+		with this kind of challenge type
+		<div class="field">
+			<%= f.select :challenge_type, Choices['challenge_type'] %>
+		</div>
 	</div>
 
 	<div class="actions">
