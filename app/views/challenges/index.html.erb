@@ -1,5 +1,5 @@
 
-<h1>All joined challenges </h1>
+<h1>All joined solo challenges </h1>
 
 <table>
 	<thead>
@@ -21,7 +21,7 @@
 	</thead>
 
 	<tbody>
-		<% @my_joined_challenges.each do |s| %>
+		<% @my_joined_solo_challenges.each do |s| %>
 			<tr>
 				<td><%= s.cost_per_completion%></td>
 				<td><%= s.challenge_type%></td>
@@ -30,7 +30,7 @@
 				<td><%= s.kilos_to_run %></td>
 				<td><%= s.calories_to_burn%></td>
 				<td><%#=comment out for now bc cause association hasnt been implemented  Cause.find(s.cause_id).name%></td>
-				<% stat = ((JoinedChallenge.where("challenge_id = ?", s.id))[0]) %>
+				<% stat = ((JoinedSoloChallenge.where("challenge_id = ?", s.id))[0]) %>
 				<%# raise stat.methods.sort.to_s %>
 
 				<%# challenge_stat = stat.get_lastest_chal_status(@user.id) %>
@@ -43,8 +43,8 @@
 				<td><%=stat.kilos_ran%></td>
 				<td><%= stat.active%> </td>
 				<td><%= stat.finished =%>
-				<td><%= link_to 'unjoin this challenge',user_challenge_joined_challenges_destroy_path(@user,s), :method => :delete %></td>
-				<td><%= if (!stat.active) then link_to 'make this challenge active',user_challenge_joined_challenges_make_active_path(@user,s), :method => :post, :active => true end %></td>
+				<td><%= link_to 'unjoin this challenge',user_challenge_joined_solo_challenges_destroy_path(@user,s), :method => :delete %></td>
+				<td><%= if (!stat.active) then link_to 'make this challenge active',user_challenge_joined_solo_challenges_make_active_path(@user,s), :method => :post, :active => true end %></td>
 				</tr>
 			<% end %>
 		</tbody>
@@ -54,7 +54,7 @@
 
 	<br>
 
-	<h1>All unjoined challenges </h1>
+	<h1>All unjoined solo challenges </h1>
 
 	<table>
 		<thead>
@@ -71,7 +71,7 @@
 		</thead>
 
 		<tbody>
-			<% @my_unjoined_challenges.each do |s| %>
+			<% @my_unjoined_solo_challenges.each do |s| %>
 				<tr>
 					<td><%= s.cost_per_completion%></td>
 					<td><%= s.challenge_type%></td>
@@ -80,7 +80,7 @@
 					<td><%= s.kilos_to_run %></td>
 					<td><%= s.calories_to_burn%></td>
 					<td><%#=comment out for now bc cause association hasnt been implemented  Cause.find(s.cause_id).name%></td>
-					<td><%= link_to 'join this challenge',user_challenge_joined_challenges_create_path(@user,s), :method => :post %></td>
+					<td><%= link_to 'join this challenge',user_challenge_joined_solo_challenges_create_path(@user,s), :method => :post %></td>
 				</tr>
 			<% end %>
 		</tbody>

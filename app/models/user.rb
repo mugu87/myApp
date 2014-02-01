@@ -39,7 +39,8 @@ class User < ActiveRecord::Base
 	has_many :stats
 	has_many :donations
 	has_many :challenges
-	has_and_belongs_to_many :joined_challenges
+	has_many :solos
+	belongs_to :group
 	belongs_to :cause
 
 	def get_calories_gained_on_date (date)

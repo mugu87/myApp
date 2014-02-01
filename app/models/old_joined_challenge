@@ -16,8 +16,6 @@
 #
 
 class JoinedChallenge < ActiveRecord::Base
-	belongs_to :challenge
-	has_and_belongs_to_many :users
 	#TODO validate that joined challenge is not expired
 	#
 	#	#get the lastest status of this joined challenge

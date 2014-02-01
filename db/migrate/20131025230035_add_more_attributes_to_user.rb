@@ -8,5 +8,6 @@ class AddMoreAttributesToUser < ActiveRecord::Migration
     add_column :users, :dob, :date
     add_column :users, :company_id, :integer
 	add_column :users, :device_type, :string
+	add_column :users, :joined_group_challenge_id, :integer 
   end
 end

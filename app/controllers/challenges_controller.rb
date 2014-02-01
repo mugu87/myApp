@@ -8,18 +8,18 @@ class ChallengesController < ApplicationController
 		@my_supporting_challenges = @user.challenges
 
 		#update all the joined challenges and retrieve the actual challenge description
-		joineds = JoinedChallenge.where("user_id = ?", @user.id)
-		@my_joined_challenges =[] 
+		solo_joineds = JoinedSoloChallenge.where("user_id = ?", @user.id)
+		@my_joined_solo_challenges =[] 
 		#raise joineds.inspect
-		joineds.each do |joined|
+		solo_joineds.each do |joined|
 			joined.update_challenge_stat
 			joined.save
-			@my_joined_challenges.append Challenge.find(joined.challenge_id)
+			@my_joined_solo_challenges.append Challenge.find(joined.challenge_id)
 		end
 
 
 		#@my_unjoined_challenges = JoinedChallenge.where("user_id != ?", @user.id)
-		@my_unjoined_challenges = Challenge.all - @my_joined_challenges
+		@my_unjoined_solo_challenges = Challenge.all - @my_joined_solo_challenges
 	end
 
 	# GET /challenges/1

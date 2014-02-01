@@ -16,8 +16,9 @@
 #
 
 class Challenge < ActiveRecord::Base
-	#has_many :challenge_supporters
-	has_many :challenge_joineds
+	#has_many :joined_challenges
+	has_many :solos
+	has_many :groups
 	belongs_to :cause
 	belongs_to :user
 

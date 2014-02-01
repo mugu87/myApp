@@ -16,10 +16,16 @@ BeneFitAppv2::Application.routes.draw do
 
   resources :users do
 	  resources :challenges do
-		  get 'joined_challenges/new'
-		  post 'joined_challenges/create'
-		  delete 'joined_challenges/destroy'
-		  post 'joined_challenges/make_active'
+#		  get 'joined_challenges/new'
+#		  post 'joined_challenges/create'
+#		  delete 'joined_challenges/destroy'
+#		  post 'joined_challenges/make_active'
+
+		  get 'joined_solo_challenges/new'
+		  post 'joined_solo_challenges/create'
+		  delete 'joined_solo_challenges/destroy'
+		  post 'joined_solo_challenges/make_active'
+
 	  end
   end
 
