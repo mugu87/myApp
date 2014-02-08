@@ -597,7 +597,7 @@ background-color: transparent;  }
     /*padding-bottom: 25px;*/
     color: #FFF;
     line-height: 60px;
-    font-size: 55px;
+    font-size: 50px;
     margin: auto;
 }
 
@@ -1923,7 +1923,7 @@ h1.title { line-height:40px !important; }
 	width: 100px;
 }
 .user-avatar-xs {
-	width: 30px;
+	width: 30px !important;
 	padding: 10px
 }
 .user-avatar-sm {

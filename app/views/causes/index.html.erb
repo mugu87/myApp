@@ -13,22 +13,48 @@
     </div>
       </div>
       
-      <div class="container wrapper">
+    <div class="container">
       <div class="inner_content">
-      
-      <div id="options">                                           
-                    <ul id="filters" class="option-set" data-option-key="filter">
-                        <li><a href="#filter" data-option-value="*" class=" selected">All</a> </li>
-                        <li><a href="#filter" data-option-value=".category01">Category 01</a> </li>                                            
-                        <li><a href="#filter" data-option-value=".category02">Category 02</a> </li>
-                        <li><a href="#filter" data-option-value=".category03">Category 03</a></li> 
-                    </ul>                                           
-                    <div class="clear"></div>
-                </div>
-                <div class="row">
+        <div id="options" class="isotopeOptions">                                           
+          <ul id="filters" class="option-set" data-option-key="filter">
+              <li><a href="#filter" data-option-value="*" class=" selected">All</a> </li>
+              <li><a href="#filter" data-option-value=".1">Popular</a> </li>                                            
+              <li><a href="#filter" data-option-value=".2">Recently Added</a> </li>
+              <li><a href="#filter" data-option-value=".3">Featured</a></li> 
+          </ul>                                           
+          <div class="clear"></div>
+          </div>
+        </div>
+        <div class="pad25 hidden-desktop"></div>
+      </div>
+     <!--  <div class="row"> -->
                     <!-- portfolio_block --> 
-                    <div class="projects">                                  
- <% @causes.each do |cause| %>   
+      <div class="projects">  
+         <% @causes.each do |cause| %>   
+        <div class="bg-green element <%= cause.user_id %>">
+          <div class="project-inner">
+            <div class="inner_content">
+              <ul class="inline text-white">
+                <li class="orange-border-left">
+                  <div>
+                    <p class="challenge-text"><span><%= link_to cause.name, cause %></span><br><small><%= cause.description %></small></p>
+                  </div>
+                </li>
+                <li class="pull-right">
+                  <div>
+                    <%= image_tag "arrow_right.png", :class => 'user-avatar-xs' %>
+                  </div>
+              </li>
+              </ul>
+            </div>
+          </div>
+        </div>                                
+        <% end %>
+
+</div>
+<!-- </div> -->
+   <!--               
+   <% @causes.each do |cause| %>  
                       <div class="span6 element category<%= cause.user_id %>" data-category="category<%= cause.user_id %>">
                             <div class="hover_img">
                 <%= link_to image_tag(cause.photo.url), cause_path(cause) %>
@@ -41,7 +67,8 @@
                      </div>
   <% end %>
 
-   <!--                      <div class="span6 element category01" data-category="category01">
+
+          <div class="span6 element category01" data-category="category01">
                             <div class="hover_img">
                 <a href="img/portfolio/1.jpg" data-rel="prettyPhoto[portfolio1]"> 
                                 <img src="img/portfolio/1.jpg" alt="" /></a>
@@ -114,36 +141,35 @@
                         <div class="clear"></div>
                     </div>   
                     -->   
-                </div>
-            </div>
-        </div>
-  </div>
+                
+        
 <!--//page-->
 <script type="text/javascript">
 //<![CDATA[
   $(window).load(function(){  
-  $('.projects').isotope({
-  });
-});
+    $('.projects').isotope({
+    });
+
+ 
 //]]>
 </script>   
 <script type="text/javascript">
-//<![CDATA[
-    $(function () {
-      $('div.element').hide();
-    });
-    var i = 0;//initialize
-    var int=0;
-    $(window).bind("load", function() {
-      var int = setInterval("doThis(i)",100);//fade in speed in milliseconds
-    }); 
-  function doThis() {
-      var imgs = $('div.element').length;
-      if (i >= imgs) {
-        clearInterval(int);
-      }
-      $('div.element:hidden').eq(0).fadeIn(100);
-      i++;//add 1 to the count
-    }
-    //]]>
+// //<![CDATA[
+//     $(function () {
+//       $('div.element').hide();
+//     });
+//     var i = 0;//initialize
+//     var int=0;
+//     $(window).bind("load", function() {
+//       var int = setInterval("doThis(i)",100);//fade in speed in milliseconds
+//     }); 
+//   function doThis() {
+//       var imgs = $('div.element').length;
+//       if (i >= imgs) {
+//         clearInterval(int);
+//       }
+//       $('div.element:hidden').eq(0).fadeIn(100);
+//       i++;//add 1 to the count
+//     }
+//     //]]>
 </script>

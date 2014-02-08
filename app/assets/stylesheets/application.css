@@ -71,15 +71,30 @@ Home page
 	margin-top: 10px;
 }
 
+.projects a {
+	color: #fff !important;
+}
+
+.projects a:hover {
+	background-color: none !important;
+	color: #666 !important;
+	background: none !important;
+}
 /*.projects li.orange-border-left {
 	position: absolute;
 	top:30px;
 	left:22%;
 }*/
 
+.isotopeOptions {
+	padding: 0 0 0px;
+	width: 50%;
+    margin: 0 auto;
+}
+
 .challenge-text {
 	padding-left:30px; 
-	padding-top:25px;
+	padding-top:20px;
 	font-size: 18px;
 	font-weight: 300;
 	letter-spacing: 2px;
