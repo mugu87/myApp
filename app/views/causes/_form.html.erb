@@ -53,7 +53,7 @@
                 <div class="uploader-tools">
                     <div class="photo-selector">
                         <div class="image-selector">
-                            <%= f.file_field :photo, :type => 'file', :required => true %>
+                            <%= f.file_field :photo %>
                         </div>
                     </div>
                     <p class="help-block">Maximum size of ____. JPG or PNG.</p>
@@ -67,14 +67,14 @@
     </div> -->
     
     <div class="actions">
-      <%= f.submit "Create Cause", :class => 'btn btn-primary btn-rounded btn-custom' %>
+      <%= f.submit "Save", :class => 'btn btn-primary btn-rounded btn-custom' %>
     </div>
   </form>
 </div>
 <% end %>
 
 
-<div class="span7">
+<!-- <div class="span7">
   <div class="row">
     <div class="span2">
       <div class="slider-image">
@@ -113,7 +113,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 </div>
 

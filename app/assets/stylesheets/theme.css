@@ -27,9 +27,15 @@ Purchase:  http://themeforest.net/user/josweb
 /*	01: GENERAL STYLING
 /*-----------------------------------------------------------------------------------*/
 
+@font-face {
+	font-family: NexaLight;
+	src: url(NexaLight.ttf);
+}
+
 body {
 	margin:0; padding:0;
-	font:13px/22px 'Lato', sans-serif;
+	/*font: 13px/22/px 'NexaLight', sans-serif !important*//*13px/22px 'Lato', sans-serif !important;*/
+	font-family:"NexaLight", sans-serif !important;
 	color:#555;
 	background: #f0f0f0;  
 	-webkit-backface-visibility:hidden; 
@@ -115,6 +121,8 @@ blockquote { border-left:3px solid #1ABC9C;}
 .pad15 { padding-top:15px; }
 .pad10 { padding-top:10px; }
 .pad5 { padding-top:5px; }
+
+.pad_bottom15 { padding-bottom:15px; }
 
 /* Margins */
 .marg-bottom5 { margin-bottom:5px; }
@@ -565,7 +573,6 @@ background-color: transparent;  }
  a.nivo-prevNav { right:33px; }
 
 #caption {
-    font-family: 'Lato', sans-serif;
     display:block;
     position: relative;
     z-index:8;
@@ -574,22 +581,25 @@ background-color: transparent;  }
     bottom: 365px;
     margin: auto;
     margin-bottom: -85px;
-    height: 30px;
-    line-height: 60px;
-    font-size: 60px;
+    /*height: 30px;*/
 	width:auto !important;
     max-width: 680px;
-    background-color: #1ABC9C;
-    color: #FFF;
-    font-weight: 300;
+    /*background-color: #1ABC9C;*/
+    background-color: rgba(26, 188, 156, .5);
+	color: rgba(26, 188, 156, .5);
     letter-spacing: 2px;
     /* border-bottom: 2px solid white; */
-    padding-bottom: 35px;
-    font-style: italic;
-    padding-left: 5px;
-    padding-right: 5px;
+    
 }
-
+#caption p {
+	padding: 5px 0 5px 15px;
+    font-family:"NexaBold", sans-serif;
+    /*padding-bottom: 25px;*/
+    color: #FFF;
+    line-height: 60px;
+    font-size: 50px;
+    margin: auto;
+}
 
 
 /***************************************************
@@ -1913,7 +1923,7 @@ h1.title { line-height:40px !important; }
 	width: 100px;
 }
 .user-avatar-xs {
-	width: 30px;
+	width: 30px !important;
 	padding: 10px
 }
 .user-avatar-sm {
@@ -1938,3 +1948,7 @@ h1.title { line-height:40px !important; }
 	-moz-border-radius: 4px;
 	border-radius: 4px;
 }
+
+ .projects ul {
+ 	vertical-align: center !important;
+ }
