@@ -38,7 +38,7 @@
 							<label class="control-label">or</label>
 							<div class="controls">
 								<div class="input-append">
-								<%= f.number_field :kilo_to_walk %>
+								<%= f.number_field :kilos_to_walk %>
 								  <span class="add-on">kilos to walk</span>
 								</div>
 							</div>
@@ -47,7 +47,7 @@
 							<label class="control-label">or</label>
 							<div class="controls">
 								<div class="input-append">
-								<%= f.number_field :kilo_to_run %>
+								<%= f.number_field :kilos_to_run %>
 								  <span class="add-on">kilos to run</span>
 								</div>
 							</div>
@@ -73,31 +73,33 @@
 		<% end %> 
 	</div>
 </div>
-
+<!--
 	<div>I will donate 
 		<div class="field">
-			<%= f.number_field :cost_per_completion %> dollars
+			<%#= f.number_field :cost_per_completion %> dollars
 		</div>
 		for <div class="field">
-			<%= f.number_field :calories_to_burn, default: 0 %> calories to burn
+			<%#= f.number_field :calories_to_burn, default: 0 %> calories to burn
 		</div>
 		or <div class="field">
-			<%= f.number_field :kilos_to_walk, default: 0.0 %> kilos to walk
+			<%#= f.number_field :kilos_to_walk, default: 0.0 %> kilos to walk
 		</div> 
 		or <div class="field">
-			<%= f.number_field :kilos_to_run, default: 0.0 %> kilos to run
+			<%#= f.number_field :kilos_to_run, default: 0.0 %> kilos to run
 		</div> 
 		until <div class="field">
-			<%= f.date_select :expiration %>
+			<%#= f.date_select :expiration %>
 		</div>
 		for this cause <div class="field">
-			<%= select_tag(:cause, options_from_collection_for_select(Cause.all, "id","name")) %>
+			<%#= select_tag(:cause, options_from_collection_for_select(Cause.all, "id","name")) %>
 		</div>
 		with this kind of challenge type
 		<div class="field">
-			<%= f.select :challenge_type, Choices['challenge_type'] %>
+			<%#= f.select :challenge_type, Choices['challenge_type'] %>
 		</div>
 	</div>
+
+	-->
 
 
 
