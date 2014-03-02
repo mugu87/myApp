@@ -108,6 +108,9 @@ class User < ActiveRecord::Base
 	#
 	#  end
 
+
+	# returns a user given a provider and uid.  If youser cannot be found
+	# creates a new user. 
 	def self.find_for_fitbit_oauth(auth, signed_in_resource=nil)
 		user = User.where(:provider => auth.provider, :uid => auth.uid).first
 		unless user
@@ -123,6 +126,7 @@ class User < ActiveRecord::Base
 		user
 	end
 
+
 	def self.new_with_session(params, session)
 		if session["devise.user_attributes"]
 			new(session["devise.user_attributes"]) do |user|
@@ -133,6 +137,8 @@ class User < ActiveRecord::Base
 		end
 	end
 
+	# Creates a fitbit client using enviromental variables and ominAuth
+	# credentials
 	def fitbit_data
 		raise "Account is not linked with a Fitbit account" unless linked?
 		@client ||= Fitgem::Client.new(
@@ -148,6 +154,8 @@ class User < ActiveRecord::Base
 		!@client.nil?
 	end
 
+
+	# Checks if oAuthentication with fitbit is still valid
 	def linked?
 		oauth_token.present? && oauth_secret.present?
 	end
